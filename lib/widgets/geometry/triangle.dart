@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Triangle extends StatelessWidget {
   Triangle({super.key, required this.color, required this.size});
@@ -11,11 +11,14 @@ class Triangle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RotatedBox(
-      quarterTurns: size.toInt(),
-      child: rnd.nextInt(2) == 0
-          ? _FilledTriangle(color, size)
-          : _EmptyTriangle(color, size),
+    return Transform(
+      transform: Matrix4.skew(rnd.nextDouble() * 10, rnd.nextDouble() * 10),
+      child: RotatedBox(
+        quarterTurns: size.toInt(),
+        child: rnd.nextInt(2) == 0
+            ? _FilledTriangle(color, size)
+            : _EmptyTriangle(color, size),
+      ),
     );
   }
 }
@@ -59,7 +62,15 @@ class _TrianglePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = color
+      ..shader =
+          RadialGradient(
+            colors: [color, color.withRed(200).withBlue(30).withGreen(2)],
+          ).createShader(
+            Rect.fromCircle(
+              center: Offset(size.width / 2, size.height / 2),
+              radius: size.width,
+            ),
+          )
       ..strokeWidth = 1
       ..style = PaintingStyle.stroke;
 

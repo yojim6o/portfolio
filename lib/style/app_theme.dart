@@ -4,7 +4,7 @@ import 'package:portfolio/style/app_colors.dart';
 import 'package:portfolio/style/app_size.dart';
 
 class AppTheme {
-  final String fontFamily = GoogleFonts.firaCode().fontFamily!;
+  final String fontFamily = GoogleFonts.inter().fontFamily!;
 
   AppTheme(/*{this.fontFamily}*/);
 

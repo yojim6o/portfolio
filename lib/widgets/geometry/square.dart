@@ -13,7 +13,7 @@ class Square extends StatelessWidget {
       child: Container(
         height: size,
         width: size,
-        decoration: BoxDecoration(color: color),
+        decoration: BoxDecoration(color: color, shape: BoxShape.rectangle),
       ),
     );
   }

@@ -52,7 +52,7 @@ class AppLogo extends StatelessWidget {
     return Text(
       'Portfolio',
       style: context.textStyle.titleLgBold.copyWith(
-        fontFamily: GoogleFonts.firaCode().fontFamily,
+        fontFamily: GoogleFonts.figtree().fontFamily,
       ),
     );
   }
