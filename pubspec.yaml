@@ -1,0 +1,58 @@
+name: portfolio
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  dotted_border: ^3.1.0
+  dotted_line: ^3.2.3
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  flutter_staggered_grid_view: ^0.7.0
+  flutter_svg: ^2.2.0
+  gap: ^3.0.1
+  google_fonts: ^6.2.1
+  intl: any
+  riverpod_annotation: ^2.6.1
+  shared_preferences: ^2.5.3
+  url_launcher: ^6.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  custom_lint: ^0.7.5
+  riverpod_lint: ^2.6.5
+  riverpod_generator: ^2.6.5
+  build_runner: ^2.5.4
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+    - family: Dosis
+      fonts:
+        - asset: assets/fonts/Dosis-Regular.ttf
+        - asset: assets/fonts/Dosis-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Dosis-Bold.ttf
+          weight: 700

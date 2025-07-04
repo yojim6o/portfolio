@@ -1,0 +1,15 @@
+{
+  "home": "Inicio",
+  "courses": "Cursos",
+  "coursesDescription": "Learn Flutter and Mobile App development with me",
+  "blog": "Blog",
+  "about": "Sobre mí",
+  "g1": "Gabriel Enguídanos",
+  "g2": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',",
+  "g3": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "poweredByFlutter": "Web 100% creada con Flutter",
+  "experiences": "Experiencias",
+  "experiencesDescription": "Este es mi recorrido como desarrollador de software.",
+  "skills": "Conocimiento",
+  "skillsDescription": "Lenguajes, frameworks y herramientas que he usado durante mi carrera."
+}
