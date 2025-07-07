@@ -3,16 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/extensions.dart';
+import 'package:portfolio/features/courses/presentation/projects_list.dart';
 import 'package:portfolio/features/experiences/presentation/experience_body.dart';
 import 'package:portfolio/features/home/presentation/hero_widget.dart';
-import 'package:portfolio/features/home/presentation/home_course_list.dart';
 import 'package:portfolio/features/testimony/presentation/skill_list.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widgets/appbar/my_app_bar.dart';
 import 'package:portfolio/widgets/background_blur.dart';
 import 'package:portfolio/widgets/my_footer.dart';
-
-import '../../../widgets/home_title_subtitle.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,7 +37,7 @@ class HomePage extends StatelessWidget {
                         SliverGap(context.insets.gap),
                         SliverToBoxAdapter(child: const ExperienceBody()),
                         SliverGap(context.insets.gap),
-                        SliverToBoxAdapter(
+                        /* SliverToBoxAdapter(
                           child: HomeTitleSubtitle(
                             title: context.text.skills,
                             subtitle: context.text.skillsDescription,
@@ -51,7 +49,8 @@ class HomePage extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                             horizontal: context.insets.padding,
                           ),
-                        ),
+                        ),*/
+                        SliverToBoxAdapter(child: SkillList()),
                         SliverToBoxAdapter(child: MyFooter()),
                       ],
                     ),

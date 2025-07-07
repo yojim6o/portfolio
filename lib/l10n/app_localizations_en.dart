@@ -12,10 +12,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get home => 'Home';
 
   @override
-  String get courses => 'Courses';
+  String get projects => 'Projects';
 
   @override
-  String get coursesDescription => 'Learn Flutter and Mobile App development with me';
+  String get projectsDescription => 'Some of my personal projects with their respective link to GitHub repository.';
 
   @override
   String get blog => 'Blog';
@@ -46,4 +46,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skillsDescription => 'Languages, frameworks and tools I\'ve used during my career';
+
+  @override
+  String get javaDescription => 'Solid knowledge of Java language, familiar with generics, interfaces, inheritance and crucial dependencies like Lombok and Mapstruct.';
+
+  @override
+  String get jsDescription => 'Wide understanding of JS language, as async await, fetch, deconstruction, functions as parameters and DOM modification.';
+
+  @override
+  String get mongoDescription => 'I had to learn mongo by force and soon I get comfortable with its own vision. As well as basic querys, I\'ve managed to do complex querys using aggregations and also facets.';
+
+  @override
+  String get goDescription => 'Basic knowledge. Expecting to learn more and more as it is positioned as reliable, fast, flexible and easy to understand language.';
+
+  @override
+  String get rustDescription => 'Very basic knowledge of the language, but  would be really excited if I could grow up my Rust skills as it has proven to be a future proof language.';
+
+  @override
+  String get reactDescription => 'I\'ve worked a lot on React and really enjoyed it. Usage of custom hooks, composition and inner routing.';
+
+  @override
+  String get springDescription => 'I work fluently with Spring 3+, integrating Spring Security and Spring Data.';
+
+  @override
+  String get flutterDescription => 'I\'m relatively new to Flutter but I am really enjoying my time with it. At the moment I\'ve coded a weather app for android and this portfolio is powered by Flutter also.';
+
+  @override
+  String get mongoCompassDescription => 'Basic usage for building aggregations, creating indexes, modifying data or run scripts.';
 }

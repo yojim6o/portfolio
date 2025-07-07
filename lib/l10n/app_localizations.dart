@@ -101,17 +101,17 @@ abstract class AppLocalizations {
   /// **'Home'**
   String get home;
 
-  /// No description provided for @courses.
+  /// No description provided for @projects.
   ///
   /// In en, this message translates to:
-  /// **'Courses'**
-  String get courses;
+  /// **'Projects'**
+  String get projects;
 
-  /// No description provided for @coursesDescription.
+  /// No description provided for @projectsDescription.
   ///
   /// In en, this message translates to:
-  /// **'Learn Flutter and Mobile App development with me'**
-  String get coursesDescription;
+  /// **'Some of my personal projects with their respective link to GitHub repository.'**
+  String get projectsDescription;
 
   /// No description provided for @blog.
   ///
@@ -172,6 +172,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Languages, frameworks and tools I\'ve used during my career'**
   String get skillsDescription;
+
+  /// No description provided for @javaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Solid knowledge of Java language, familiar with generics, interfaces, inheritance and crucial dependencies like Lombok and Mapstruct.'**
+  String get javaDescription;
+
+  /// No description provided for @jsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Wide understanding of JS language, as async await, fetch, deconstruction, functions as parameters and DOM modification.'**
+  String get jsDescription;
+
+  /// No description provided for @mongoDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'I had to learn mongo by force and soon I get comfortable with its own vision. As well as basic querys, I\'ve managed to do complex querys using aggregations and also facets.'**
+  String get mongoDescription;
+
+  /// No description provided for @goDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic knowledge. Expecting to learn more and more as it is positioned as reliable, fast, flexible and easy to understand language.'**
+  String get goDescription;
+
+  /// No description provided for @rustDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Very basic knowledge of the language, but  would be really excited if I could grow up my Rust skills as it has proven to be a future proof language.'**
+  String get rustDescription;
+
+  /// No description provided for @reactDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'ve worked a lot on React and really enjoyed it. Usage of custom hooks, composition and inner routing.'**
+  String get reactDescription;
+
+  /// No description provided for @springDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'I work fluently with Spring 3+, integrating Spring Security and Spring Data.'**
+  String get springDescription;
+
+  /// No description provided for @flutterDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m relatively new to Flutter but I am really enjoying my time with it. At the moment I\'ve coded a weather app for android and this portfolio is powered by Flutter also.'**
+  String get flutterDescription;
+
+  /// No description provided for @mongoCompassDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic usage for building aggregations, creating indexes, modifying data or run scripts.'**
+  String get mongoCompassDescription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/extensions.dart';
-import 'package:portfolio/features/courses/presentation/course_item.dart';
+import 'package:portfolio/features/courses/presentation/project_item.dart';
 import 'package:portfolio/widgets/home_title_subtitle.dart';
 
 class HomeCourseList extends StatelessWidget {
@@ -13,8 +13,8 @@ class HomeCourseList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HomeTitleSubtitle(
-          title: context.text.courses,
-          subtitle: context.text.coursesDescription,
+          title: context.text.projects,
+          subtitle: context.text.projectsDescription,
         ),
         Gap(32),
         context.isDesktop ? _HomeCourseListDesktop() : _HomeCourseSlideMobile(),
@@ -31,6 +31,7 @@ class _HomeCourseListDesktop extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
       child: Row(
+        spacing: 16,
         children: [
           Expanded(child: CourseItem()),
           Expanded(child: CourseItem()),

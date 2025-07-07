@@ -11,12 +11,14 @@ class StyledCard extends StatefulWidget {
     this.borderRadius,
     this.borderEffect = false,
     required this.child,
+    this.color,
   });
 
   final double? width;
   final double? height;
   final EdgeInsets? padding;
   final BorderRadius? borderRadius;
+  final Color? color;
   final bool borderEffect;
   final Widget child;
 
@@ -39,19 +41,20 @@ class _StyledCardState extends State<StyledCard> {
           padding: widget.padding ?? EdgeInsets.all(context.insets.cardPadding),
           decoration: BoxDecoration(
             border: Border.all(color: context.theme.colorScheme.outline),
-            color: context.theme.cardColor,
-            borderRadius:
+            color: widget.color ?? context.theme.cardColor,
+
+            /*borderRadius:
                 widget.borderRadius ??
-                const BorderRadius.all(Radius.circular(24)),
+                const BorderRadius.all(Radius.circular(24)),*/
           ),
           child: widget.child,
         ),
-        if (widget.borderEffect) ...[
+        /* if (widget.borderEffect) ...[
           CustomPaint(
             size: Size(widget.width ?? 0, widget.height ?? 0),
             painter: _CurvedLinePainter(context.theme.scaffoldBackgroundColor),
           ),
-        ],
+        ],*/
       ],
     );
   }

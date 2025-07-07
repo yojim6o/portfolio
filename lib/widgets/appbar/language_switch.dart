@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/widgets/appbar/seo_text.dart';
 
-import '../../constants/app_icon.dart';
+import '../../constants/app_constants.dart';
 import '../../shared/app_locale_controller.dart';
 
 class LanguageSwitch extends ConsumerWidget {

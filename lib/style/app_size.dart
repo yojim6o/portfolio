@@ -60,7 +60,7 @@ class SmallInsets extends AppInsets {
   double get appBarHeight => 56;
 
   @override
-  double get cardPadding => Insets.lg;
+  double get cardPadding => Insets.med;
 
   @override
   double get gap => 72;

@@ -13,6 +13,7 @@ class HeroText extends StatelessWidget {
     return DottedBorder(
       options: RectDottedBorderOptions(
         color: context.theme.colorScheme.onSecondaryContainer,
+        padding: EdgeInsets.all(0),
       ),
       child: Container(
         padding: EdgeInsets.all(context.insets.padding),

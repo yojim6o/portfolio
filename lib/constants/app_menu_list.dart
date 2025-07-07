@@ -6,7 +6,7 @@ class AppMenuList {
   static List<AppMenu> getItems(BuildContext context) {
     return [
       AppMenu(title: context.text.home, path: Routes.home),
-      AppMenu(title: context.text.courses, path: Routes.courses),
+      //AppMenu(title: context.text.courses, path: Routes.courses),
       AppMenu(title: context.text.blog, path: Routes.blog),
       AppMenu(title: context.text.about, path: Routes.about),
     ];

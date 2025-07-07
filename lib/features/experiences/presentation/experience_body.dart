@@ -187,6 +187,7 @@ class ExperienceItem extends StatelessWidget {
               color: context.theme.colorScheme.onBackground,
             ),
           ),
+          const Gap(16),
           Expanded(
             child: Column(
               children: [

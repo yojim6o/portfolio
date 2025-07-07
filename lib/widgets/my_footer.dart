@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/constants/app_icon.dart';
+import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/widgets/appbar/my_app_bar.dart';
 import 'package:portfolio/widgets/powered_by_flutter.dart';

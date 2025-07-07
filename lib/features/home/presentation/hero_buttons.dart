@@ -12,7 +12,7 @@ class LargeHeroButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        PrimaryButton(title: context.text.courses),
+        PrimaryButton(title: context.text.projects),
         Gap(Insets.lg),
         OutlineButton(title: context.text.blog),
       ],
@@ -29,7 +29,7 @@ class SmallHeroButtons extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          child: PrimaryButton(title: context.text.courses),
+          child: PrimaryButton(title: context.text.projects),
         ),
         Gap(Insets.lg),
         SizedBox(

@@ -12,10 +12,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get home => 'Inicio';
 
   @override
-  String get courses => 'Cursos';
+  String get projects => 'Proyectos';
 
   @override
-  String get coursesDescription => 'Learn Flutter and Mobile App development with me';
+  String get projectsDescription => 'Algunos de mis proyectos personales, con enlaces a sus correspondientes repositorios en GitHub.';
 
   @override
   String get blog => 'Blog';
@@ -46,4 +46,31 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get skillsDescription => 'Lenguajes, frameworks y herramientas que he usado durante mi carrera.';
+
+  @override
+  String get javaDescription => 'Conocimiento sólido del lenguage, familiarizado con el uso de interfaces, genéricos, herencia y dependencias famosas como Lombok o Mapstruct.';
+
+  @override
+  String get jsDescription => 'Amplio entendimiento del lenguaje JS, incluyendo async/await, fetch, desestructuración, funciones como parámetros y modificación del DOM.';
+
+  @override
+  String get mongoDescription => 'Tuve que aprender Mongo a la fuerza y pronto me sentí cómodo con su propia visión. Además de consultas básicas, he logrado realizar consultas complejas utilizando agregaciones y también facets.';
+
+  @override
+  String get goDescription => 'Conocimientos básicos. Espero seguir aprendiendo ya que se posiciona como un lenguaje confiable, rápido, flexible y fácil de entender.';
+
+  @override
+  String get rustDescription => 'Conocimientos muy básicos del lenguaje, pero estaría muy ilusionado si pudiera desarrollar mis habilidades en Rust, ya que ha demostrado ser un lenguaje preparado para el futuro.';
+
+  @override
+  String get reactDescription => 'He usado mucho con React en proyectos personales y realmente disfruto construir interfaces con esta librería. Por destacar alguna skill, he trabajado con hooks personalizados, composición y enrutamiento interno.';
+
+  @override
+  String get springDescription => 'Puedo trabajar fluidamente con Spring 3+, integrando Spring Security y Spring Data, por ejemplo.';
+
+  @override
+  String get flutterDescription => 'Soy relativamente nuevo en Flutter, pero estoy disfrutando mucho su aprendizaje. Por ahora he desarrollado una app del de previsión del tiempo para Android y este portafolio, desarrollado también en Flutter.';
+
+  @override
+  String get mongoCompassDescription => 'Uso básico para construir agregaciones, crear índices, modificar datos o ejecutar scripts.';
 }

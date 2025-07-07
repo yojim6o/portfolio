@@ -52,6 +52,8 @@ extension StyledContext on BuildContext {
 
   ThemeData get theme => Theme.of(this);
 
+  bool get isDark => Theme.of(this).brightness == Brightness.dark;
+
   AppLocalizations get text =>
       AppLocalizations.of(this) ?? lookupAppLocalizations(const Locale('en'));
 }

@@ -1,7 +1,7 @@
 {
   "home": "Inicio",
-  "courses": "Cursos",
-  "coursesDescription": "Learn Flutter and Mobile App development with me",
+  "projects": "Proyectos",
+  "projectsDescription": "Algunos de mis proyectos personales, con enlaces a sus correspondientes repositorios en GitHub.",
   "blog": "Blog",
   "about": "Sobre mí",
   "g1": "Gabriel Enguídanos",
@@ -11,5 +11,14 @@
   "experiences": "Experiencias",
   "experiencesDescription": "Este es mi recorrido como desarrollador de software.",
   "skills": "Conocimiento",
-  "skillsDescription": "Lenguajes, frameworks y herramientas que he usado durante mi carrera."
+  "skillsDescription": "Lenguajes, frameworks y herramientas que he usado durante mi carrera.",
+  "javaDescription": "Conocimiento sólido del lenguage, familiarizado con el uso de interfaces, genéricos, herencia y dependencias famosas como Lombok o Mapstruct.",
+  "jsDescription": "Amplio entendimiento del lenguaje JS, incluyendo async/await, fetch, desestructuración, funciones como parámetros y modificación del DOM.",
+  "mongoDescription": "Tuve que aprender Mongo a la fuerza y pronto me sentí cómodo con su propia visión. Además de consultas básicas, he logrado realizar consultas complejas utilizando agregaciones y también facets.",
+  "goDescription": "Conocimientos básicos. Espero seguir aprendiendo ya que se posiciona como un lenguaje confiable, rápido, flexible y fácil de entender.",
+  "rustDescription": "Conocimientos muy básicos del lenguaje, pero estaría muy ilusionado si pudiera desarrollar mis habilidades en Rust, ya que ha demostrado ser un lenguaje preparado para el futuro.",
+  "reactDescription": "He usado mucho con React en proyectos personales y realmente disfruto construir interfaces con esta librería. Por destacar alguna skill, he trabajado con hooks personalizados, composición y enrutamiento interno.",
+  "springDescription": "Puedo trabajar fluidamente con Spring 3+, integrando Spring Security y Spring Data, por ejemplo.",
+  "flutterDescription": "Soy relativamente nuevo en Flutter, pero estoy disfrutando mucho su aprendizaje. Por ahora he desarrollado una app del de previsión del tiempo para Android y este portafolio, desarrollado también en Flutter.",
+  "mongoCompassDescription": "Uso básico para construir agregaciones, crear índices, modificar datos o ejecutar scripts."
 }
