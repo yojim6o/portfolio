@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                       slivers: [
                         SliverToBoxAdapter(child: HeroWidget()),
                         SliverGap(context.insets.gap),
-                        SliverToBoxAdapter(child: const HomeCourseList()),
+                        SliverToBoxAdapter(child: const HomeProjectList()),
                         SliverGap(context.insets.gap),
                         SliverToBoxAdapter(child: const ExperienceBody()),
                         SliverGap(context.insets.gap),

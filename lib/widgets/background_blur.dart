@@ -33,7 +33,7 @@ class _RandomPositioned extends StatelessWidget {
   final int maxW;
   final Random rnd = Random();
 
-  _RandomPositioned({super.key, required this.maxH, required this.maxW});
+  _RandomPositioned({required this.maxH, required this.maxW});
 
   @override
   Widget build(BuildContext context) {

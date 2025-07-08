@@ -24,16 +24,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get about => 'About me';
 
   @override
-  String get g1 => 'Gabriel Enguidanos';
+  String get g1 => 'Gabriel Enguídanos';
 
   @override
-  String get g2 => '\'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua\',';
+  String get g2 => '\'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\' - Linus Torvalds.';
 
   @override
-  String get g3 => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.';
+  String get g3 => 'Hi there! Welcome to my portfolio and... yes, you guessed it! It\'s inspired by the art of Joan Miró. I studied the Higher Diploma in Web Application Development at IES La Vereda (Valencia) with good grades, working with technologies such as Java, React, Laravel, Android Mobile, Bootstrap and SQL. This allowed me to build a solid foundation on which to keep expanding my knowledge and technical curiosity. When programming, I always try to apply the DRY principle and aim for high levels of abstraction.';
 
   @override
   String get poweredByFlutter => 'Web 100% powered by Flutter';
+
+  @override
+  String get weatherAppDescription => 'This was my first personal project in Flutter. At the beggining I wasn\'t Flutter skilled, but the problems I faced made me become more fluent.\nIt is a minimalist design, that retrieves location automatically from phone and then fetcehs the data and transfomrs it. I made use of Bloc, Cubit, Trent, Repository, Freezed, custom theme and RxDart for stream management.';
 
   @override
   String get experiences => 'Experiences';
@@ -54,6 +57,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get jsDescription => 'Wide understanding of JS language, as async await, fetch, deconstruction, functions as parameters and DOM modification.';
 
   @override
+  String get sqlDescription => 'Hight knowledge in SQL queries, even with more complex and inner queries.';
+
+  @override
   String get mongoDescription => 'I had to learn mongo by force and soon I get comfortable with its own vision. As well as basic querys, I\'ve managed to do complex querys using aggregations and also facets.';
 
   @override
@@ -69,8 +75,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get springDescription => 'I work fluently with Spring 3+, integrating Spring Security and Spring Data.';
 
   @override
-  String get flutterDescription => 'I\'m relatively new to Flutter but I am really enjoying my time with it. At the moment I\'ve coded a weather app for android and this portfolio is powered by Flutter also.';
+  String get flutterDescription => 'I\'m relatively new to Flutter but I am really enjoying my time with it. At the moment I\'ve coded a weather app for Android and this portfolio is alse powered by Flutter.';
 
   @override
   String get mongoCompassDescription => 'Basic usage for building aggregations, creating indexes, modifying data or run scripts.';
+
+  @override
+  String get dawExperience => 'Finalizado con éxito;Diploma académico a la excelencia académica;Amplio stack de tecnologías';
+
+  @override
+  String get sopraExperience => 'Prácticas que finalizan con contratación indefinida;Terminar proyectos clave con Spring 3.0 y JAVA 17;Felicitaciones por parte de la directiva por el trabajo realizado en proyectos clave';
 }

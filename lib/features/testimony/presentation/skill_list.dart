@@ -40,7 +40,7 @@ class _SkillListContent extends StatelessWidget {
 }
 
 class _DesktopSkillsContainer extends StatelessWidget {
-  const _DesktopSkillsContainer({super.key});
+  const _DesktopSkillsContainer();
 
   @override
   Widget build(BuildContext context) {

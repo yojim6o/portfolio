@@ -1,47 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/widgets/appbar/seo_text.dart';
 import 'package:portfolio/widgets/styled_card.dart';
 
-class CourseItem extends StatelessWidget {
-  const CourseItem({super.key});
+import '../../../widgets/appbar/styled_buttons.dart';
+
+class ProjectItem extends StatelessWidget {
+  const ProjectItem(this.project, {super.key});
+
+  final Project project;
 
   @override
   Widget build(BuildContext context) {
     return StyledCard(
-      child: AspectRatio(
-        aspectRatio: 0.7,
-        child: Column(
-          children: [
-            AspectRatio(
-              aspectRatio: 1.5,
-              child: ClipRect(
-                child: Image.network(
-                  'https://images.unsplash.com/photo-1750797636255-8c939940bcad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8',
-                  fit: BoxFit.cover,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: 286),
+        child: AspectRatio(
+          aspectRatio: 0.7,
+          child: Column(
+            children: [
+              AspectRatio(
+                aspectRatio: 1.5,
+                child: Row(
+                  spacing: 16,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    for (final path in project.imagePaths)
+                      Flexible(child: Image.asset(path, fit: BoxFit.cover)),
+                  ],
                 ),
               ),
-            ),
-            Gap(24),
-            SeoText(
-              'RandomText',
-              textStyle: context.textStyle.bodyLgBold.copyWith(
-                color: context.theme.colorScheme.onSurface,
-              ),
-            ),
-            Gap(8),
-            Expanded(
-              child: SeoText(
-                'Some description text for testing',
-                textStyle: context.textStyle.bodyMdMedium.copyWith(
+              Gap(24),
+              SeoText(
+                project.title,
+                textStyle: context.textStyle.bodyLgBold.copyWith(
                   color: context.theme.colorScheme.onSurface,
                 ),
-                maxLines: 4,
-                overflow: TextOverflow.ellipsis,
               ),
-            ),
-          ],
+              Gap(8),
+              Expanded(
+                child: SeoText(
+                  project.description(context),
+                  textStyle: context.textStyle.bodyMdMedium.copyWith(
+                    color: context.theme.colorScheme.onSurface,
+                  ),
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              PrimaryButton(title: "Go to repo"),
+            ],
+          ),
         ),
       ),
     );

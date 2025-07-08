@@ -32,11 +32,16 @@ class OutlineButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {},
+      style: ButtonStyle(
+        side: WidgetStateProperty.resolveWith((states) {
+          return BorderSide(color: context.theme.colorScheme.onSurface);
+        }),
+      ),
       child: SeoText(
         title,
         textStyle: TextStyle(
           fontWeight: FontWeight.w500,
-          color: context.theme.colorScheme.onBackground,
+          color: context.theme.colorScheme.onSurface,
         ),
       ),
     );

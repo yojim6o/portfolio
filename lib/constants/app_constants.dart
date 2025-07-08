@@ -14,6 +14,7 @@ class AppIcon {
   static String go = '$_icons/ic-go.svg';
   static String rust = '$_icons/ic-rust.svg';
   static String mongo = '$_icons/ic-mongo.svg';
+  static String sql = '$_icons/ic-sql.svg';
   static String react = '$_icons/ic-react.svg';
   static String spring = '$_icons/ic-spring.svg';
   static String flutter = '$_icons/ic-flutter.svg';
@@ -21,6 +22,7 @@ class AppIcon {
   static String idea = '$_icons/ic-idea.svg';
   static String mongoCompass = '$_icons/ic-mongo.svg';
   static String tailwind = '$_icons/ic-tailwind.svg';
+  static String postman = '$_icons/ic-postman.svg';
 }
 
 class AppUrl {
@@ -48,15 +50,15 @@ class _CustomColorMode {
 class AppSkills {
   static final highKnowledge = _CustomColorMode(
     light: Color(0xffDCF5DC),
-    dark: Color(0xFF4CAF50),
+    dark: Color(0xFF3B9E49),
   );
   static final midKnowledge = _CustomColorMode(
     light: Color(0xffDCF5A1),
-    dark: Color(0xFFFBC02D),
+    dark: Color(0xFFEAB01C),
   );
   static final lowKnowledge = _CustomColorMode(
     light: Color(0xffDCDCF5),
-    dark: Color(0xFF9575CD),
+    dark: Color(0xFF8464BC),
   );
   static Map<String, Map<String, dynamic>> skillCategories = {
     "languages": {
@@ -71,6 +73,12 @@ class AppSkills {
         "color": (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
         "description": (BuildContext c) => c.text.jsDescription,
+      },
+      "sql": {
+        "icon": AppIcon.sql,
+        "color": (bool isDark) =>
+            isDark ? midKnowledge.dark : midKnowledge.light,
+        "description": (BuildContext c) => c.text.sqlDescription,
       },
       "mongo": {
         "icon": AppIcon.mongo,
@@ -116,13 +124,19 @@ class AppSkills {
         "icon": AppIcon.vscode,
         "color": (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (BuildContext c) => '',
+        "description": (_) => '',
       },
       "intellij": {
         "icon": AppIcon.idea,
         "color": (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (BuildContext c) => '',
+        "description": (_) => '',
+      },
+      "tailwind": {
+        "icon": AppIcon.tailwind,
+        "color": (bool isDark) =>
+            isDark ? highKnowledge.dark : highKnowledge.light,
+        "description": (_) => '',
       },
       "mongo compass": {
         "icon": AppIcon.mongoCompass,
@@ -130,12 +144,74 @@ class AppSkills {
             isDark ? lowKnowledge.dark : lowKnowledge.light,
         "description": (BuildContext c) => c.text.mongoCompassDescription,
       },
-      "tailwind": {
-        "icon": AppIcon.tailwind,
+      "postman": {
+        "icon": AppIcon.postman,
         "color": (bool isDark) =>
             isDark ? lowKnowledge.dark : lowKnowledge.light,
-        "description": (BuildContext c) => '',
+        "description": (_) => '',
       },
     },
   };
+}
+
+class Experience {
+  final String title;
+  final DateTime start;
+  DateTime? end;
+  final List<String> Function(BuildContext context) descriptionItems;
+
+  Experience({
+    required this.title,
+    required this.start,
+    this.end,
+    required this.descriptionItems,
+  });
+}
+
+class AppExperiences {
+  static final experiences = [
+    Experience(
+      title: "DAW",
+      start: DateTime(2022, DateTime.september),
+      end: DateTime(2024, DateTime.june),
+      descriptionItems: (context) => context.text.dawExperience.split(";"),
+    ),
+    Experience(
+      title: "Sopra Steria",
+      start: DateTime(2024, DateTime.july),
+      descriptionItems: (context) => context.text.sopraExperience.split(";"),
+    ),
+  ];
+}
+
+class Project {
+  final String title;
+  final List<String> imagePaths;
+  final String Function(BuildContext) description;
+
+  Project({
+    required this.title,
+    required this.imagePaths,
+    required this.description,
+  });
+}
+
+class AppProjects {
+  AppProjects(_);
+
+  static final projects = [
+    Project(
+      title: "Weather App Android",
+      imagePaths: [
+        'assets/images/weather-light.jpg',
+        'assets/images/weather-dark.jpg',
+      ],
+      description: (BuildContext context) => context.text.weatherAppDescription,
+    ),
+    Project(
+      title: "Flutter Portfolio",
+      imagePaths: ['assets/images/portfolio.jpg'],
+      description: (BuildContext context) => context.text.weatherAppDescription,
+    ),
+  ];
 }

@@ -34,7 +34,7 @@ class SmallHero extends StatelessWidget {
         ),
         Gap(Insets.xl),
         const HeroText(),
-        Gap(Insets.xxl),
+        Gap(Insets.xl),
         const SmallHeroButtons(),
       ],
     );
@@ -58,7 +58,7 @@ class LargeHero extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const HeroText(),
-              Gap(Insets.xxl),
+              Gap(Insets.xl),
               const LargeHeroButtons(),
             ],
           ),

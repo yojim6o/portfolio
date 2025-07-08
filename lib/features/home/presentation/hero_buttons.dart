@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
-import 'package:portfolio/extensions.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widgets/appbar/styled_buttons.dart';
 
@@ -12,9 +11,9 @@ class LargeHeroButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        PrimaryButton(title: context.text.projects),
+        PrimaryButton(title: "LinkedIn"),
         Gap(Insets.lg),
-        OutlineButton(title: context.text.blog),
+        OutlineButton(title: "Github"),
       ],
     );
   }
@@ -29,12 +28,12 @@ class SmallHeroButtons extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          child: PrimaryButton(title: context.text.projects),
+          child: PrimaryButton(title: "LinkedIn"),
         ),
         Gap(Insets.lg),
         SizedBox(
           width: double.infinity,
-          child: OutlineButton(title: context.text.blog),
+          child: OutlineButton(title: "GitHub"),
         ),
       ],
     );

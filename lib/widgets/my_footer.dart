@@ -28,7 +28,7 @@ class MyFooter extends StatelessWidget {
 }
 
 class _DesktopFooter extends StatelessWidget {
-  const _DesktopFooter({super.key});
+  const _DesktopFooter();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _DesktopFooter extends StatelessWidget {
 }
 
 class _PhoneFooter extends StatelessWidget {
-  const _PhoneFooter({super.key});
+  const _PhoneFooter();
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class _PhoneFooter extends StatelessWidget {
 }
 
 class _FooterLinks extends StatelessWidget {
-  const _FooterLinks({super.key});
+  const _FooterLinks();
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class _FooterLinks extends StatelessWidget {
 }
 
 class _FooterLinkItem extends StatelessWidget {
-  const _FooterLinkItem({super.key, required this.icon, required this.uri});
+  const _FooterLinkItem({required this.icon, required this.uri});
 
   final Uri uri;
   final String icon;
@@ -87,7 +87,7 @@ class _FooterLinkItem extends StatelessWidget {
       icon: SvgPicture.asset(
         icon,
         colorFilter: ColorFilter.mode(
-          context.theme.colorScheme.onBackground,
+          context.theme.colorScheme.onSurface,
           BlendMode.srcIn,
         ),
       ),
@@ -95,6 +95,6 @@ class _FooterLinkItem extends StatelessWidget {
   }
 
   Future<void> _launchUri() async {
-    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) ;
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {}
   }
 }

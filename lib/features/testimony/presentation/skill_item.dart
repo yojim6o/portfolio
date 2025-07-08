@@ -36,7 +36,7 @@ class SkillItem extends StatelessWidget {
                 child: Text(
                   title,
                   style: context.textStyle.titleMdMedium.copyWith(
-                    color: context.theme.colorScheme.onBackground,
+                    color: context.theme.colorScheme.onSurface,
                   ),
                 ),
               ),
@@ -46,7 +46,7 @@ class SkillItem extends StatelessWidget {
           Text(
             description,
             style: context.textStyle.bodyMdMedium.copyWith(
-              color: context.theme.colorScheme.onBackground,
+              color: context.theme.colorScheme.onSurface,
             ),
           ),
         ],

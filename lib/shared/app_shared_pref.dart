@@ -22,7 +22,7 @@ class AppSharedPref {
 
   static Future<ThemeMode> getAppTheme() async {
     final sharedPref = await SharedPreferences.getInstance();
-    final result = await sharedPref.getString(themeKey);
+    final result = sharedPref.getString(themeKey);
     if (result != null) {
       if (result == ThemeMode.light.name) {
         return ThemeMode.light;

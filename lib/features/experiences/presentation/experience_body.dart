@@ -1,12 +1,13 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/widgets/home_title_subtitle.dart';
 
 import '../../../widgets/styled_card.dart';
 
-const expLen = 6;
+final expList = AppExperiences.experiences;
 const expPointsSize = 16;
 const expScaleFactor = 150.0;
 const expPointsFactor = (expHeight / 2) - (expPointsSize / 2);
@@ -24,7 +25,11 @@ class ExperienceBody extends StatelessWidget {
           subtitle: context.text.experiencesDescription,
         ),
         Gap(32),
-        context.isDesktop ? DesktopExperiencesBody() : MobileExperiencesBody(),
+        Center(
+          child: context.isDesktop
+              ? DesktopExperiencesBody()
+              : MobileExperiencesBody(),
+        ),
       ],
     );
   }
@@ -37,13 +42,13 @@ class DesktopExperiencesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: expLen * expScaleFactor + expScaleFactor,
+      height: expList.length * expScaleFactor + expScaleFactor,
       child: Stack(
         children: [
           Center(
             child: Container(
               width: 3,
-              height: expLen * expScaleFactor + expScaleFactor,
+              height: expList.length * expScaleFactor + expScaleFactor,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -57,7 +62,7 @@ class DesktopExperiencesBody extends StatelessWidget {
               ),
             ),
           ),
-          for (int i = 0; i < expLen; i++) ...[
+          for (int i = 0; i < expList.length; i++) ...[
             if (i.isEven)
               Positioned(
                 top: i * expScaleFactor,
@@ -67,11 +72,11 @@ class DesktopExperiencesBody extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ExperienceItem(),
+                    ExperienceItem(experience: expList.elementAt(i)),
                     SizedBox(
                       width: 100,
                       child: DottedLine(
-                        dashColor: context.theme.colorScheme.onBackground,
+                        dashColor: context.theme.colorScheme.onSurface,
                       ),
                     ),
                   ],
@@ -89,10 +94,10 @@ class DesktopExperiencesBody extends StatelessWidget {
                     SizedBox(
                       width: 100,
                       child: DottedLine(
-                        dashColor: context.theme.colorScheme.onBackground,
+                        dashColor: context.theme.colorScheme.onSurface,
                       ),
                     ),
-                    ExperienceItem(),
+                    ExperienceItem(experience: expList.elementAt(i)),
                   ],
                 ),
               ),
@@ -105,7 +110,7 @@ class DesktopExperiencesBody extends StatelessWidget {
                 width: expPointsSize.toDouble(),
                 height: expPointsSize.toDouble(),
                 decoration: BoxDecoration(
-                  color: context.theme.colorScheme.onBackground.withAlpha(50),
+                  color: context.theme.colorScheme.onSurface.withAlpha(50),
                   shape: BoxShape.circle,
                 ),
                 child: Container(
@@ -113,7 +118,7 @@ class DesktopExperiencesBody extends StatelessWidget {
                   width: expPointsSize.toDouble() / 2,
                   height: expPointsSize.toDouble() / 2,
                   decoration: BoxDecoration(
-                    color: context.theme.colorScheme.onBackground.withAlpha(
+                    color: context.theme.colorScheme.onSurface.withAlpha(
                       210,
                     ),
                     shape: BoxShape.circle,
@@ -133,36 +138,22 @@ class MobileExperiencesBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          ExperienceItem(),
-          SizedBox(
-            height: 60,
-            child: DottedLine(
-              dashColor: Colors.white,
-              direction: Axis.vertical,
+    return Column(
+      children: [
+        for (int i = 0; i < expList.length; i++) ...[
+          ExperienceItem(experience: expList[i]),
+
+          if (i < expList.length - 1)
+            SizedBox(
+              height: 60,
+              child: DottedLine(
+                dashColor: context.theme.colorScheme.onSurface,
+                direction: Axis.vertical,
+                lineThickness: 4,
+              ),
             ),
-          ),
-          ExperienceItem(),
-          SizedBox(
-            height: 60,
-            child: DottedLine(
-              dashColor: Colors.white,
-              direction: Axis.vertical,
-            ),
-          ),
-          ExperienceItem(),
-          SizedBox(
-            height: 60,
-            child: DottedLine(
-              dashColor: Colors.white,
-              direction: Axis.vertical,
-            ),
-          ),
-          ExperienceItem(),
         ],
-      ),
+      ],
     );
   }
 }
@@ -171,7 +162,9 @@ const double expWidth = 300;
 const double expHeight = 230;
 
 class ExperienceItem extends StatelessWidget {
-  const ExperienceItem({super.key});
+  const ExperienceItem({super.key, required this.experience});
+
+  final Experience experience;
 
   @override
   Widget build(BuildContext context) {
@@ -181,20 +174,43 @@ class ExperienceItem extends StatelessWidget {
       height: expHeight,
       child: Column(
         children: [
-          Text(
-            'Experience title',
-            style: context.textStyle.bodyLgBold.copyWith(
-              color: context.theme.colorScheme.onBackground,
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: experience.title,
+                  style: context.textStyle.bodyLgBold.copyWith(
+                    color: context.theme.colorScheme.onSurface,
+                  ),
+                ),
+                TextSpan(text: " "),
+                TextSpan(
+                  text: '${experience.start.year} ~ ',
+                  style: context.textStyle.titleSmBold.copyWith(
+                    color: context.theme.colorScheme.onSurface.withAlpha(
+                      230,
+                    ),
+                    fontSize: 14,
+                  ),
+                ),
+                TextSpan(
+                  text: '${experience.end?.year ?? ""}',
+                  style: context.textStyle.titleSmBold.copyWith(
+                    color: context.theme.colorScheme.onSurface.withAlpha(
+                      230,
+                    ),
+                    fontSize: 14,
+                  ),
+                ),
+              ],
             ),
           ),
           const Gap(16),
           Expanded(
             child: Column(
               children: [
-                _ExperienceDescriptionItem(),
-                _ExperienceDescriptionItem(),
-                _ExperienceDescriptionItem(),
-                _ExperienceDescriptionItem(),
+                for (final desc in experience.descriptionItems(context))
+                  _ExperienceDescriptionItem(text: desc),
               ],
             ),
           ),
@@ -205,7 +221,9 @@ class ExperienceItem extends StatelessWidget {
 }
 
 class _ExperienceDescriptionItem extends StatelessWidget {
-  const _ExperienceDescriptionItem({super.key});
+  const _ExperienceDescriptionItem({required this.text});
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -216,15 +234,15 @@ class _ExperienceDescriptionItem extends StatelessWidget {
           height: 4,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: context.theme.colorScheme.onBackground,
+            color: context.theme.colorScheme.onSurface,
           ),
         ),
         Gap(6),
         Expanded(
           child: Text(
-            'Description item',
+            text,
             style: context.textStyle.bodyMdMedium.copyWith(
-              color: context.theme.colorScheme.onBackground,
+              color: context.theme.colorScheme.onSurface,
               fontWeight: FontWeight.w400,
             ),
           ),

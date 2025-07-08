@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/features/courses/presentation/project_item.dart';
 import 'package:portfolio/widgets/home_title_subtitle.dart';
 
-class HomeCourseList extends StatelessWidget {
-  const HomeCourseList({super.key});
+class HomeProjectList extends StatelessWidget {
+  const HomeProjectList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +18,16 @@ class HomeCourseList extends StatelessWidget {
           subtitle: context.text.projectsDescription,
         ),
         Gap(32),
-        context.isDesktop ? _HomeCourseListDesktop() : _HomeCourseSlideMobile(),
+        context.isDesktop
+            ? _HomeProjectListDesktop()
+            : _HomeProjectSlideMobile(),
       ],
     );
   }
 }
 
-class _HomeCourseListDesktop extends StatelessWidget {
-  const _HomeCourseListDesktop({super.key});
+class _HomeProjectListDesktop extends StatelessWidget {
+  const _HomeProjectListDesktop();
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +35,17 @@ class _HomeCourseListDesktop extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
       child: Row(
         spacing: 16,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(child: CourseItem()),
-          Expanded(child: CourseItem()),
-          Expanded(child: CourseItem()),
+          for (final p in AppProjects.projects) Expanded(child: ProjectItem(p)),
         ],
       ),
     );
   }
 }
 
-class _HomeCourseSlideMobile extends StatelessWidget {
-  const _HomeCourseSlideMobile({super.key});
+class _HomeProjectSlideMobile extends StatelessWidget {
+  const _HomeProjectSlideMobile();
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +53,10 @@ class _HomeCourseSlideMobile extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
+          spacing: context.insets.padding,
           children: [
-            SizedBox(width: 240, child: CourseItem()),
-            SizedBox(width: 240, child: CourseItem()),
-            SizedBox(width: 240, child: CourseItem()),
+            for (final p in AppProjects.projects)
+              SizedBox(width: 240, child: ProjectItem(p)),
           ],
         ),
       ),

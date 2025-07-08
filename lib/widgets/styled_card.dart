@@ -35,19 +35,22 @@ class _StyledCardState extends State<StyledCard> {
           const _CardBorderShadow(),
           //Positioned(bottom: 0, right: 0, child: _CardBorderShadow()),
         ],
-        Container(
-          width: widget.width,
-          height: widget.height,
-          padding: widget.padding ?? EdgeInsets.all(context.insets.cardPadding),
-          decoration: BoxDecoration(
-            border: Border.all(color: context.theme.colorScheme.outline),
-            color: widget.color ?? context.theme.cardColor,
+        Center(
+          child: Container(
+            width: widget.width,
+            height: widget.height,
+            padding:
+                widget.padding ?? EdgeInsets.all(context.insets.cardPadding),
+            decoration: BoxDecoration(
+              border: Border.all(color: context.theme.colorScheme.outline),
+              color: widget.color ?? context.theme.cardColor,
 
-            /*borderRadius:
-                widget.borderRadius ??
-                const BorderRadius.all(Radius.circular(24)),*/
+              /*borderRadius:
+                  widget.borderRadius ??
+                  const BorderRadius.all(Radius.circular(24)),*/
+            ),
+            child: widget.child,
           ),
-          child: widget.child,
         ),
         /* if (widget.borderEffect) ...[
           CustomPaint(
@@ -65,7 +68,6 @@ class _CurvedLinePainter extends CustomPainter {
 
   final Color color;
 
-  @override
   Widget build(BuildContext context) {
     return const Placeholder();
   }
@@ -127,7 +129,7 @@ class _CurvedLinePainter extends CustomPainter {
 }
 
 class _CardBorderShadow extends StatelessWidget {
-  const _CardBorderShadow({super.key});
+  const _CardBorderShadow();
 
   @override
   Widget build(BuildContext context) {

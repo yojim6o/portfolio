@@ -44,7 +44,7 @@ class LanguageSwitch extends ConsumerWidget {
       },
       child: Row(
         children: [
-          Icon(Icons.language, color: context.theme.colorScheme.onBackground),
+          Icon(Icons.language, color: context.theme.colorScheme.onSurface),
           const Gap(4),
           SeoText(locale.value?.toUpperCase() ?? 'En'),
         ],
