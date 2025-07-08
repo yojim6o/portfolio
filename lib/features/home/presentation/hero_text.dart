@@ -1,9 +1,11 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widgets/appbar/seo_text.dart';
+
+import '../../../style/app_colors.dart';
 
 class HeroText extends StatelessWidget {
   const HeroText({super.key});
@@ -12,7 +14,7 @@ class HeroText extends StatelessWidget {
   Widget build(BuildContext context) {
     return DottedBorder(
       options: RectDottedBorderOptions(
-        color: context.theme.colorScheme.onSecondaryContainer,
+        color: AppColors.pietBlack,
         padding: EdgeInsets.all(0),
       ),
       child: Container(

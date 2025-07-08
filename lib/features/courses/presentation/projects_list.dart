@@ -1,9 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/features/courses/presentation/project_item.dart';
 import 'package:portfolio/widgets/home_title_subtitle.dart';
+
+import '../../../widgets/styled_card.dart';
 
 class HomeProjectList extends StatelessWidget {
   const HomeProjectList({super.key});
@@ -34,10 +36,16 @@ class _HomeProjectListDesktop extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
       child: Row(
-        spacing: 16,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          for (final p in AppProjects.projects) Expanded(child: ProjectItem(p)),
+          for (final p in AppProjects.projects)
+            Flexible(
+              flex: 3,
+              child: FractionallySizedBox(
+                widthFactor: 0.3 * AppProjects.projects.length,
+                child: StyledCard(borderEffect: true, child: ProjectItem(p)),
+              ),
+            ),
         ],
       ),
     );

@@ -50,15 +50,15 @@ class _CustomColorMode {
 class AppSkills {
   static final highKnowledge = _CustomColorMode(
     light: Color(0xffDCF5DC),
-    dark: Color(0xFF330A33),
+    dark: Colors.black,
   );
   static final midKnowledge = _CustomColorMode(
     light: Color(0xffDCF5A1),
-    dark: Color(0xFF230a5e),
+    dark: Color.fromARGB(255, 10, 12, 14),
   );
   static final lowKnowledge = _CustomColorMode(
     light: Color(0xffDCDCF5),
-    dark: Color(0xFF23230a),
+    dark: Color.fromARGB(255, 15, 17, 19),
   );
   static Map<String, Map<String, dynamic>> skillCategories = {
     "languages": {
