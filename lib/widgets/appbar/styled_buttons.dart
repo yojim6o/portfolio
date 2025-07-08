@@ -4,14 +4,15 @@ import 'package:portfolio/style/app_colors.dart';
 import 'package:portfolio/widgets/appbar/seo_text.dart';
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({super.key, required this.title});
+  const PrimaryButton({super.key, required this.title, this.onPressed});
 
   final String title;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         title,
         style: TextStyle(

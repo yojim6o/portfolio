@@ -50,15 +50,15 @@ class _CustomColorMode {
 class AppSkills {
   static final highKnowledge = _CustomColorMode(
     light: Color(0xffDCF5DC),
-    dark: Color(0xFF3B9E49),
+    dark: Color(0xFF330A33),
   );
   static final midKnowledge = _CustomColorMode(
     light: Color(0xffDCF5A1),
-    dark: Color(0xFFEAB01C),
+    dark: Color(0xFF230a5e),
   );
   static final lowKnowledge = _CustomColorMode(
     light: Color(0xffDCDCF5),
-    dark: Color(0xFF8464BC),
+    dark: Color(0xFF23230a),
   );
   static Map<String, Map<String, dynamic>> skillCategories = {
     "languages": {
@@ -138,17 +138,17 @@ class AppSkills {
             isDark ? highKnowledge.dark : highKnowledge.light,
         "description": (_) => '',
       },
+      "postman": {
+        "icon": AppIcon.postman,
+        "color": (bool isDark) =>
+            isDark ? midKnowledge.dark : midKnowledge.light,
+        "description": (_) => '',
+      },
       "mongo compass": {
         "icon": AppIcon.mongoCompass,
         "color": (bool isDark) =>
             isDark ? lowKnowledge.dark : lowKnowledge.light,
         "description": (BuildContext c) => c.text.mongoCompassDescription,
-      },
-      "postman": {
-        "icon": AppIcon.postman,
-        "color": (bool isDark) =>
-            isDark ? lowKnowledge.dark : lowKnowledge.light,
-        "description": (_) => '',
       },
     },
   };
@@ -188,9 +188,11 @@ class Project {
   final String title;
   final List<String> imagePaths;
   final String Function(BuildContext) description;
+  final String url;
 
   Project({
     required this.title,
+    required this.url,
     required this.imagePaths,
     required this.description,
   });
@@ -201,17 +203,28 @@ class AppProjects {
 
   static final projects = [
     Project(
+      title: "Score Share",
+      imagePaths: ['assets/images/score-share.jpg'],
+      url: "https://github.com/Tarkus99/scoreshare/tree/main/scoreShare",
+      description: (BuildContext context) =>
+          context.text.scoreShareAppDescription,
+    ),
+    Project(
       title: "Weather App Android",
       imagePaths: [
         'assets/images/weather-light.jpg',
         'assets/images/weather-dark.jpg',
       ],
+      url:
+          "https://github.com/yojim6o/flutter-weather-app/tree/iteration_1.2.trent",
       description: (BuildContext context) => context.text.weatherAppDescription,
     ),
     Project(
       title: "Flutter Portfolio",
       imagePaths: ['assets/images/portfolio.jpg'],
-      description: (BuildContext context) => context.text.weatherAppDescription,
+      url: "https://github.com/yojim6o/portfolio",
+      description: (BuildContext context) =>
+          context.text.portfolioAppDescription,
     ),
   ];
 }

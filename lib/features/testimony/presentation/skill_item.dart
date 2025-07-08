@@ -35,7 +35,7 @@ class SkillItem extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: context.textStyle.titleMdMedium.copyWith(
+                  style: context.textStyle.titleSmBold.copyWith(
                     color: context.theme.colorScheme.onSurface,
                   ),
                 ),

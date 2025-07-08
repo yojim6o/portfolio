@@ -36,7 +36,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get poweredByFlutter => 'Web 100% powered by Flutter';
 
   @override
+  String get scoreShareAppDescription => 'Score Share is a web application that I presented for my bachelor\'s thesis. I worked with NextJS as a fullstack framework, Tailwind and ShadCn as style management and NeonTech and Supabase as backend storage. The app provides an interface for musicians to upload tabs, sheets and arrangements of a particular song. The song search is powered by Spotify API.';
+
+  @override
   String get weatherAppDescription => 'This was my first personal project in Flutter. At the beggining I wasn\'t Flutter skilled, but the problems I faced made me become more fluent.\nIt is a minimalist design, that retrieves location automatically from phone and then fetcehs the data and transfomrs it. I made use of Bloc, Cubit, Trent, Repository, Freezed, custom theme and RxDart for stream management.';
+
+  @override
+  String get portfolioAppDescription => 'I build a my portfolio entirely on Flutter. No better way to learn Flutter, for sure! Use of theme switch, as well as reusable widgets and responsive design.';
 
   @override
   String get experiences => 'Experiences';
