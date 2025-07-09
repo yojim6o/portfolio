@@ -8,6 +8,7 @@ class AppColors {
 
   static const gray = MaterialColor(100, {
     100: Color(0xFFFBFBFB),
+    150: Color(0xFFF9F9F9),
     200: Color(0xFFE2E2E2),
     300: Color(0xFFC9C9C9),
     400: Color(0xFFB0B0B0),

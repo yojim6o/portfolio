@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/style/app_colors.dart';
 import 'package:portfolio/style/app_size.dart';
 
 class AppTheme {
-  final String fontFamily = GoogleFonts.inter().fontFamily!;
+  final String fontFamily = 'Inter';
 
   AppTheme(/*{this.fontFamily}*/);
 
@@ -16,7 +15,7 @@ class AppTheme {
         surface: AppColors.gray[850]!,
         outline: AppColors.gray[800]!,
         outlineVariant: AppColors.gray[700]!,
-        onSurface: AppColors.gray[100]!,
+        onSurface: AppColors.gray[150]!,
         onSurfaceVariant: AppColors.gray[400]!,
         tertiary: AppColors.gray[900]!,
       ),

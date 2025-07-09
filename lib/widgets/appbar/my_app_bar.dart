@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/constants/app_menu_list.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/style/app_colors.dart';
@@ -31,10 +30,10 @@ class MyAppBar extends StatelessWidget {
                 0.41,
                 0.419,
                 0.42,
-                0.759,
-                0.76,
-                0.769,
-                0.77,
+                0.739,
+                0.74,
+                0.749,
+                0.75,
               ],
               colors: [
                 AppColors.pietYellow,
@@ -51,7 +50,7 @@ class MyAppBar extends StatelessWidget {
                 Colors.black,
                 AppColors.pietRed,
               ],
-              radius: 12,
+              radius: (context.mq.size.width * 0.008267) + 1,
               center: Alignment.center,
               focal: Alignment.bottomLeft,
             ),
@@ -98,7 +97,7 @@ class AppLogo extends StatelessWidget {
     return Text(
       'Portfolio',
       style: context.textStyle.titleLgBold.copyWith(
-        fontFamily: GoogleFonts.bricolageGrotesque().fontFamily,
+        fontWeight: FontWeight.w500,
         color: context.theme.colorScheme.onSurface,
       ),
     );

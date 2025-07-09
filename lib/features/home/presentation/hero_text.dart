@@ -32,13 +32,14 @@ class HeroText extends StatelessWidget {
                     style: context.textStyle.titleLgBold.copyWith(
                       color: AppColors.pietYellow,
                       decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   TextSpan(
                     text: "abriel ",
                     style: context.textStyle.titleLgBold.copyWith(
                       color: context.theme.colorScheme.onSurface,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   TextSpan(
@@ -46,13 +47,14 @@ class HeroText extends StatelessWidget {
                     style: context.textStyle.titleLgBold.copyWith(
                       color: AppColors.pietGreen,
                       decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   TextSpan(
                     text: "nguídanos ",
                     style: context.textStyle.titleLgBold.copyWith(
                       color: context.theme.colorScheme.onSurface,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   TextSpan(
@@ -60,13 +62,14 @@ class HeroText extends StatelessWidget {
                     style: context.textStyle.titleLgBold.copyWith(
                       color: AppColors.pietRed,
                       decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   TextSpan(
                     text: "ebot",
                     style: context.textStyle.titleLgBold.copyWith(
                       color: context.theme.colorScheme.onSurface,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],
