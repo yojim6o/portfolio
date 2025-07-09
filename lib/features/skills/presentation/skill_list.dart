@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
-import 'package:portfolio/features/testimony/presentation/skill_item.dart';
+import 'package:portfolio/features/skills/presentation/skill_item.dart';
 import 'package:portfolio/style/app_colors.dart';
 
 import '../../../widgets/home_title_subtitle.dart';
@@ -134,67 +134,71 @@ class _MobileSkillsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 16),
-      child: Column(
-        children: [
-          for (int i = 0; i < skills.length; i++) ...[
-            Column(
-              children: [
-                _CustomTextSpan(
-                  color: colors.elementAt(i),
-                  title: skills.elementAt(i).key,
-                ),
-                Gap(8),
-                Wrap(
-                  direction: Axis.horizontal,
-                  spacing: 8,
-                  runSpacing: 8,
-                  alignment: WrapAlignment.start,
-                  children: [
-                    ...skills.elementAt(i).value.entries.map<Widget>((e) {
-                      return FractionallySizedBox(
-                        widthFactor: 0.3,
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadiusGeometry.circular(999),
-                              border: Border.fromBorderSide(
-                                BorderSide(
-                                  color: colors.elementAt(i),
-                                  width: 0.5,
+    return Center(
+      child: Container(
+        margin: EdgeInsets.only(bottom: 16),
+        child: Column(
+          children: [
+            for (int i = 0; i < skills.length; i++) ...[
+              Column(
+                children: [
+                  _CustomTextSpan(
+                    color: colors.elementAt(i),
+                    title: skills.elementAt(i).key,
+                  ),
+                  Gap(8),
+                  Wrap(
+                    direction: Axis.horizontal,
+                    spacing: 8,
+                    runSpacing: 8,
+                    alignment: WrapAlignment.start,
+                    children: [
+                      ...skills.elementAt(i).value.entries.map<Widget>((e) {
+                        return FractionallySizedBox(
+                          widthFactor: 0.25,
+                          child: AspectRatio(
+                            aspectRatio: 1,
+                            child: Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadiusGeometry.circular(
+                                  999,
+                                ),
+                                border: Border.fromBorderSide(
+                                  BorderSide(
+                                    color: colors.elementAt(i),
+                                    width: 0.5,
+                                  ),
+                                ),
+                                gradient: LinearGradient(
+                                  stops: [0.09, 0.109, 0.11, 1],
+                                  colors: [
+                                    colors.elementAt(i),
+                                    colors.elementAt(i),
+                                    AppColors.pietWhite,
+                                    AppColors.pietWhite,
+                                  ],
                                 ),
                               ),
-                              gradient: LinearGradient(
-                                stops: [0.09, 0.109, 0.11, 1],
-                                colors: [
-                                  colors.elementAt(i),
-                                  colors.elementAt(i),
-                                  AppColors.pietWhite,
-                                  AppColors.pietWhite,
-                                ],
-                              ),
-                            ),
-                            child: Center(
-                              child: SvgPicture.asset(
-                                e.value['icon'],
-                                height: 64,
-                                width: 64,
+                              child: Center(
+                                child: SvgPicture.asset(
+                                  e.value['icon'],
+                                  height: 64,
+                                  width: 64,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    }),
-                  ],
-                ),
-              ],
-            ),
-            const Gap(32),
+                        );
+                      }),
+                    ],
+                  ),
+                ],
+              ),
+              const Gap(32),
+            ],
           ],
-        ],
+        ),
       ),
     );
 

@@ -23,14 +23,14 @@ class HomeTitleSubtitle extends StatelessWidget {
           SeoText(
             '#$title',
             textStyle: context.textStyle.titleSmBold.copyWith(
-              color: context.theme.colorScheme.onBackground,
+              color: context.theme.colorScheme.onSurface,
             ),
             //textRenderer: TextRendererStyle.header1,
           ),
           SeoText(
             subtitle,
             textStyle: context.textStyle.bodyMdMedium.copyWith(
-              color: context.theme.colorScheme.onBackground,
+              color: context.theme.colorScheme.onSurface,
             ),
             //textRenderer: TextRendererStyle.header1,
           ),

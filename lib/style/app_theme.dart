@@ -16,7 +16,7 @@ class AppTheme {
         surface: AppColors.gray[850]!,
         outline: AppColors.gray[800]!,
         outlineVariant: AppColors.gray[700]!,
-        onSurface: AppColors.gray[300]!,
+        onSurface: AppColors.gray[100]!,
         onSurfaceVariant: AppColors.gray[400]!,
         tertiary: AppColors.gray[900]!,
       ),
@@ -84,6 +84,20 @@ class AppTheme {
           ),
           textStyle: outlinedButtonTextStyle,
         ),
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith(
+          (states) => states.contains(WidgetState.selected)
+              ? AppColors.pietWhite
+              : AppColors.pietYellow,
+        ),
+        trackColor: WidgetStateProperty.resolveWith(
+          (states) => states.contains(WidgetState.selected)
+              ? AppColors.darkBackgroundColor
+              : null,
+        ),
+        trackOutlineColor: WidgetStateProperty.all(AppColors.pietWhite),
+        trackOutlineWidth: WidgetStateProperty.all(1),
       ),
     );
   }

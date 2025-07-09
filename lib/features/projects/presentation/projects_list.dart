@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
-import 'package:portfolio/features/courses/presentation/project_item.dart';
+import 'package:portfolio/features/projects/presentation/project_item.dart';
 import 'package:portfolio/widgets/home_title_subtitle.dart';
 
 class HomeProjectList extends StatelessWidget {

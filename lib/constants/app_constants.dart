@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/extensions.dart';
 
 class AppIcon {
-  static const String _icons = '/icons';
+  static const String _icons = 'assets/icons';
 
   static String en = '$_icons/en.svg';
   static String es = '$_icons/es.svg';

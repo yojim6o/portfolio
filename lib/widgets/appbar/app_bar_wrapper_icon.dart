@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/extensions.dart';
 import 'package:portfolio/widgets/appbar/drawer_menu.dart';
 
 class AppBarWrapperIcon extends ConsumerStatefulWidget {
@@ -41,7 +42,11 @@ class _AppBarWrapperIconState extends ConsumerState<AppBarWrapperIcon>
           ref.read(drawerMenuControllerProvider.notifier).toggle();
         });
       },
-      icon: AnimatedIcon(icon: AnimatedIcons.menu_close, progress: animation),
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_close,
+        progress: animation,
+        color: context.theme.colorScheme.onSurface,
+      ),
     );
   }
 }

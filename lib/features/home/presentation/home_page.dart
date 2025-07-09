@@ -3,15 +3,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/extensions.dart';
-import 'package:portfolio/features/courses/presentation/projects_list.dart';
 import 'package:portfolio/features/experiences/presentation/experience_body.dart';
 import 'package:portfolio/features/home/presentation/hero_widget.dart';
-import 'package:portfolio/features/testimony/presentation/skill_list.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widgets/appbar/my_app_bar.dart';
 import 'package:portfolio/widgets/my_footer.dart';
 
 import '../../../widgets/background_blur.dart';
+import '../../projects/presentation/projects_list.dart';
+import '../../skills/presentation/skill_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
