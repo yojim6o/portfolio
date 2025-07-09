@@ -24,7 +24,7 @@ class AppTheme {
       elevatedButtonTextStyle: _darkElevatedButtonTextStyle,
       outlinedButtonTextStyle: _darkOutlinedButtonTextStyle,
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.gray[900]!.withAlpha(100),
+        backgroundColor: AppColors.gray[900]!.withAlpha(50),
       ),
     );
   }
@@ -41,11 +41,11 @@ class AppTheme {
         onSurfaceVariant: AppColors.gray[600]!,
         tertiary: AppColors.gray[900]!,
       ),
-      scaffoldBackgroundColor: AppColors.miroBeige,
+      scaffoldBackgroundColor: Colors.white,
       elevatedButtonTextStyle: _lightElevatedButtonTextStyle,
       outlinedButtonTextStyle: _lightOutlinedButtonTextStyle,
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.gray[100]!.withAlpha(100),
+        backgroundColor: AppColors.gray[100]!.withAlpha(50),
       ),
     );
   }

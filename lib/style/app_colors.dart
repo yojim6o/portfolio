@@ -22,7 +22,7 @@ class AppColors {
   static const Color pietBlue = Color(0xFF14b2e5);
 
   //0xFFd21c2b;
-  static const Color pietRed = Color(0xFFE65F78);
+  static const Color pietRed = Color(0xFFd21c2b);
   static const Color pietYellow = Color(0xFFe5b114);
   static const Color pietBlack = Color(0xFF191605);
   static const Color pietWhite = Color(0xFFf9f9f9);

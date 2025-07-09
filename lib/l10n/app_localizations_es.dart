@@ -30,7 +30,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get g2 => ' \'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\' - Linus Torvalds.';
 
   @override
-  String get g3 => '¡Hola! Bienvenid@ a mi portfolio... y seguro que ya lo has adivinado, pero este diseño tan extraño está inspirado en las pinturas de Joan Miró. Estudié el grado superior de desarollo de aplicaciones web en IES La Vereda (Valencia) con buenas calificaciones, tocando tecnologías como Java, React, Laravel, Android Mobile, Bootstrap o SQL. Esto me permitió construir unos cimientos sólidos sobre los cuáles seguir aumentando mi conocimiento y curiosidad técnica. A la hora de programar, intento siempre aplicar la norma DRY y conseguir niveles altos de abstracción.';
+  String get g3 => '¡Hola! Bienvenid@ a mi portfolio... y seguro que ya lo has adivinado, pero este diseño tan colorido está inspirado en las pinturas de Piet Mondrian. Estudié el grado superior de desarollo de aplicaciones web en IES La Vereda (Valencia) con buenas calificaciones, tocando tecnologías como Java, React, Laravel, Android Mobile, Bootstrap o SQL. Esto me permitió construir unos cimientos sólidos sobre los cuáles seguir aumentando mi conocimiento y curiosidad técnica. A la hora de programar, intento siempre aplicar la norma DRY y conseguir niveles altos de abstracción.';
 
   @override
   String get poweredByFlutter => 'Web 100% creada con Flutter';

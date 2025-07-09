@@ -4,6 +4,8 @@ import 'package:portfolio/style/app_colors.dart';
 class HeroImage extends StatelessWidget {
   const HeroImage({super.key});
 
+  final alpha = 80;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -12,20 +14,20 @@ class HeroImage extends StatelessWidget {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: AppColors.pietGreen,
+                color: AppColors.pietGreen.withAlpha(alpha),
                 spreadRadius: 2,
                 blurRadius: 1,
                 offset: Offset(9, 8),
               ),
               BoxShadow(
-                color: AppColors.pietYellow,
+                color: AppColors.pietYellow.withAlpha(alpha),
 
                 spreadRadius: 2,
                 blurRadius: 1,
                 offset: Offset(-2, -4),
               ),
               BoxShadow(
-                color: AppColors.pietRed,
+                color: AppColors.pietRed.withAlpha(alpha),
                 spreadRadius: 2,
                 blurRadius: 1,
                 offset: Offset(4, 4),

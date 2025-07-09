@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 abstract class ApptextStyle {
   TextStyle get titleSmBold;
@@ -28,8 +29,11 @@ class SmallTextStyle extends ApptextStyle {
       TextStyle(fontSize: 12, fontWeight: FontWeight.w500);
 
   @override
-  TextStyle get titleLgBold =>
-      TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
+  TextStyle get titleLgBold => TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w300,
+    fontFamily: GoogleFonts.bricolageGrotesque().fontFamily,
+  );
 
   @override
   TextStyle get titleMdMedium =>
@@ -54,8 +58,11 @@ class LargeTextStyle extends ApptextStyle {
       TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
 
   @override
-  TextStyle get titleLgBold =>
-      TextStyle(fontSize: 40, fontWeight: FontWeight.bold);
+  TextStyle get titleLgBold => TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.w300,
+    fontFamily: GoogleFonts.bricolageGrotesque().fontFamily,
+  );
 
   @override
   TextStyle get titleMdMedium =>

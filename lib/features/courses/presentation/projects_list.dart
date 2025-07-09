@@ -5,8 +5,6 @@ import 'package:portfolio/extensions.dart';
 import 'package:portfolio/features/courses/presentation/project_item.dart';
 import 'package:portfolio/widgets/home_title_subtitle.dart';
 
-import '../../../widgets/styled_card.dart';
-
 class HomeProjectList extends StatelessWidget {
   const HomeProjectList({super.key});
 
@@ -43,7 +41,7 @@ class _HomeProjectListDesktop extends StatelessWidget {
               flex: 3,
               child: FractionallySizedBox(
                 widthFactor: 0.3 * AppProjects.projects.length,
-                child: StyledCard(borderEffect: true, child: ProjectItem(p)),
+                child: Material(elevation: 15, child: ProjectItem(p)),
               ),
             ),
         ],

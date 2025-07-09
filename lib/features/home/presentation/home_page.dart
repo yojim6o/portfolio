@@ -9,8 +9,9 @@ import 'package:portfolio/features/home/presentation/hero_widget.dart';
 import 'package:portfolio/features/testimony/presentation/skill_list.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/widgets/appbar/my_app_bar.dart';
-import 'package:portfolio/widgets/background_blur.dart';
 import 'package:portfolio/widgets/my_footer.dart';
+
+import '../../../widgets/background_blur.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -30,7 +30,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get g2 => '\'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\' - Linus Torvalds.';
 
   @override
-  String get g3 => 'Hi there! Welcome to my portfolio and... yes, you guessed it! It\'s inspired by the art of Joan Miró. I studied the Higher Diploma in Web Application Development at IES La Vereda (Valencia) with good grades, working with technologies such as Java, React, Laravel, Android Mobile, Bootstrap and SQL. This allowed me to build a solid foundation on which to keep expanding my knowledge and technical curiosity. When programming, I always try to apply the DRY principle and aim for high levels of abstraction.';
+  String get g3 => 'Hi there! Welcome to my portfolio and... yes, you guessed it! It\'s inspired by the art of Piet Mondrian. I studied the Higher Diploma in Web Application Development at IES La Vereda (Valencia) with good grades, working with technologies such as Java, React, Laravel, Android Mobile, Bootstrap and SQL. This allowed me to build a solid foundation on which to keep expanding my knowledge and technical curiosity. When programming, I always try to apply the DRY principle and aim for high levels of abstraction.';
 
   @override
   String get poweredByFlutter => 'Web 100% powered by Flutter';
