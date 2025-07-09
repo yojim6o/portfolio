@@ -25,14 +25,15 @@ class PrimaryButton extends StatelessWidget {
 }
 
 class OutlineButton extends StatelessWidget {
-  const OutlineButton({super.key, required this.title});
+  const OutlineButton({super.key, required this.title, this.onPressed});
 
   final String title;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ButtonStyle(
         side: WidgetStateProperty.resolveWith((states) {
           return BorderSide(color: context.theme.colorScheme.onSurface);

@@ -58,12 +58,15 @@ class _HomeProjectSlideMobile extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Row(
-          spacing: context.insets.padding,
-          children: [
-            for (final p in AppProjects.projects)
-              SizedBox(width: 240, child: ProjectItem(p)),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(context.insets.padding),
+          child: Row(
+            spacing: context.insets.padding,
+            children: [
+              for (final p in AppProjects.projects)
+                Material(child: SizedBox(width: 240, child: ProjectItem(p))),
+            ],
+          ),
         ),
       ),
     );

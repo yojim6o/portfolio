@@ -147,7 +147,6 @@ class MobileExperiencesBody extends StatelessWidget {
               child: DottedLine(
                 dashColor: context.theme.colorScheme.onSurface,
                 direction: Axis.vertical,
-                lineThickness: 4,
               ),
             ),
         ],

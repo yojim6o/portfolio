@@ -254,13 +254,13 @@ abstract class AppLocalizations {
   /// No description provided for @dawExperience.
   ///
   /// In en, this message translates to:
-  /// **'Finalizado con éxito;Diploma académico a la excelencia académica;Amplio stack de tecnologías'**
+  /// **'Successfully completed;Academic diploma for academic excellence;Extensive technology stack'**
   String get dawExperience;
 
   /// No description provided for @sopraExperience.
   ///
   /// In en, this message translates to:
-  /// **'Prácticas que finalizan con contratación indefinida;Terminar proyectos clave con Spring 3.0 y JAVA 17;Felicitaciones por parte de la directiva por el trabajo realizado en proyectos clave'**
+  /// **'Internship leading to permanent contract;Completed key projects using Spring 3.0 and JAVA 17;Commendations from management for work on key projects'**
   String get sopraExperience;
 }
 

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
+import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/appbar/my_app_bar.dart';
 import 'package:portfolio/widgets/powered_by_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MyFooter extends StatelessWidget {
   const MyFooter({super.key});
@@ -83,7 +83,7 @@ class _FooterLinkItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: _launchUri,
+      onPressed: () => Utils.launchUri(uri),
       icon: SvgPicture.asset(
         icon,
         colorFilter: ColorFilter.mode(
@@ -92,9 +92,5 @@ class _FooterLinkItem extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Future<void> _launchUri() async {
-    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {}
   }
 }

@@ -50,7 +50,12 @@ class _RandomPositioned extends StatelessWidget {
         case Shape.triangle:
           output.add(
             _buildShape(
-              Triangle(color: color, size: rnd.nextInt(200).toDouble()),
+              Triangle(
+                isFilled: rnd.nextBool(),
+                doSkew: true,
+                color: color,
+                size: rnd.nextInt(200).toDouble(),
+              ),
             ),
           );
           break;

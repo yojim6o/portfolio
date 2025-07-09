@@ -3,19 +3,29 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class Triangle extends StatelessWidget {
-  Triangle({super.key, required this.color, required this.size});
+  Triangle({
+    super.key,
+    required this.color,
+    required this.size,
+    required this.doSkew,
+    required this.isFilled,
+  });
 
   final Color color;
   final double size;
   final Random rnd = Random();
+  final bool doSkew;
+  final bool isFilled;
 
   @override
   Widget build(BuildContext context) {
     return Transform(
-      transform: Matrix4.skew(rnd.nextDouble() * 10, rnd.nextDouble() * 10),
+      transform: doSkew
+          ? Matrix4.skew(rnd.nextDouble() * 10, rnd.nextDouble() * 10)
+          : Matrix4.identity(),
       child: RotatedBox(
         quarterTurns: size.toInt(),
-        child: rnd.nextInt(2) == 0
+        child: isFilled
             ? _FilledTriangle(color, size)
             : _EmptyTriangle(color, size),
       ),

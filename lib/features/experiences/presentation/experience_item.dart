@@ -1,9 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:math';
+
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/extensions.dart';
+import 'package:portfolio/widgets/geometry/square.dart';
 
 import '../../../constants/app_constants.dart';
-import '../../../widgets/styled_card.dart';
+import '../../../style/app_colors.dart';
 
 const double expWidth = 300;
 const double expHeight = 230;
@@ -15,82 +18,101 @@ class ExperienceItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StyledCard(
-      borderEffect: true,
-      width: expWidth,
-      height: expHeight,
-      child: Column(
-        children: [
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: experience.title,
-                  style: context.textStyle.bodyLgBold.copyWith(
+    return Material(
+      elevation: 10,
+      child: Container(
+        width: expWidth,
+        height: expHeight,
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.only(bottom: 4),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    width: 0.4,
                     color: context.theme.colorScheme.onSurface,
                   ),
                 ),
-                TextSpan(text: " "),
-                TextSpan(
-                  text: '${experience.start.year} ~ ',
-                  style: context.textStyle.titleSmBold.copyWith(
-                    color: context.theme.colorScheme.onSurface.withAlpha(230),
-                    fontSize: 14,
-                  ),
+              ),
+
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: experience.title,
+                      style: context.textStyle.bodyLgBold.copyWith(
+                        color: context.theme.colorScheme.onSurface,
+                      ),
+                    ),
+                    TextSpan(text: " "),
+                    TextSpan(
+                      text: '${experience.start.year} ~ ',
+                      style: context.textStyle.bodyMdMedium.copyWith(
+                        color: context.theme.colorScheme.onSurface.withAlpha(
+                          230,
+                        ),
+                        fontSize: 14,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '${experience.end?.year ?? ""}',
+                      style: context.textStyle.bodyMdMedium.copyWith(
+                        color: context.theme.colorScheme.onSurface.withAlpha(
+                          230,
+                        ),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
                 ),
-                TextSpan(
-                  text: '${experience.end?.year ?? ""}',
-                  style: context.textStyle.titleSmBold.copyWith(
-                    color: context.theme.colorScheme.onSurface.withAlpha(230),
-                    fontSize: 14,
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-          const Gap(16),
-          Expanded(
-            child: Column(
-              children: [
-                for (final desc in experience.descriptionItems(context))
-                  _ExperienceDescriptionItem(text: desc),
-              ],
+            const Gap(16),
+            Expanded(
+              child: Column(
+                children: [
+                  for (final desc in experience.descriptionItems(context))
+                    _ExperienceDescriptionItem(text: desc),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
 class _ExperienceDescriptionItem extends StatelessWidget {
-  const _ExperienceDescriptionItem({required this.text});
+  _ExperienceDescriptionItem({required this.text});
 
   final String text;
+  final Random rnd = Random();
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: 4,
-          height: 4,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: context.theme.colorScheme.onSurface,
-          ),
-        ),
-        const Gap(6),
-        Expanded(
-          child: Text(
-            text,
-            style: context.textStyle.bodyMdMedium.copyWith(
-              color: context.theme.colorScheme.onSurface,
-              fontWeight: FontWeight.w400,
+    final Color color = AppColors.miroList.elementAt(rnd.nextInt(4));
+
+    return Container(
+      margin: EdgeInsets.only(bottom: 4),
+      child: Row(
+        children: [
+          Square(color: color, size: 4),
+          const Gap(6),
+          Expanded(
+            child: Text(
+              text,
+              style: context.textStyle.bodyMdMedium.copyWith(
+                color: context.theme.colorScheme.onSurface,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

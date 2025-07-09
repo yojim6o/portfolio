@@ -19,21 +19,21 @@ class AppColors {
     900: Color(0xFF110d12),
   });
 
-  static const Color pietBlue = Color(0xFF14b2e5);
+  static const Color pietBlue = Color(0xFF41C0E9);
 
   //0xFFd21c2b;
-  static const Color pietRed = Color(0xFFd21c2b);
-  static const Color pietYellow = Color(0xFFe5b114);
+  static const Color pietRed = Color(0xFFDA4854);
+  static const Color pietYellow = Color(0xFFE9BF41);
   static const Color pietBlack = Color(0xFF191605);
   static const Color pietWhite = Color(0xFFf9f9f9);
-  static const Color pietGreen = Color(0xFF00A651);
+  static const Color pietGreen = Color(0xFF31B672);
   static const Color miroBeige = Color(0xFFF5F5DC);
 
   static const List<Color> miroList = [
     pietRed,
-    pietWhite,
     pietBlue,
     pietYellow,
     pietGreen,
+    pietWhite,
   ];
 }

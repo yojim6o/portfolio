@@ -58,7 +58,7 @@ class MyAppBar extends StatelessWidget {
             border: Border(
               bottom: BorderSide(
                 width: 2.5,
-                color: context.theme.colorScheme.onBackground,
+                color: context.theme.colorScheme.onSurface,
               ),
             ),
           ),
@@ -77,8 +77,7 @@ class MyAppBar extends StatelessWidget {
                   if (context.isDesktop)
                     MenuList(wrapper: (children) => Row(children: children)),
                   Spacer(),
-                  LanguageSwitch(),
-                  ThemeSwitch(),
+                  Row(spacing: 16, children: [LanguageSwitch(), ThemeSwitch()]),
                   if (!context.isDesktop) AppBarWrapperIcon(),
                 ],
               ),
@@ -100,7 +99,7 @@ class AppLogo extends StatelessWidget {
       'Portfolio',
       style: context.textStyle.titleLgBold.copyWith(
         fontFamily: GoogleFonts.bricolageGrotesque().fontFamily,
-        color: context.theme.colorScheme.onBackground,
+        color: context.theme.colorScheme.onSurface,
       ),
     );
   }
@@ -150,7 +149,7 @@ class LargeAppBarMenuItem extends StatelessWidget {
         child: Text(
           text,
           style: SmallTextStyle().bodyLgMedium.copyWith(
-            color: context.theme.colorScheme.onBackground,
+            color: context.theme.colorScheme.onSurface,
           ),
         ),
       ),

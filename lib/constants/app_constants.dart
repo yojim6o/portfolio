@@ -26,6 +26,8 @@ class AppIcon {
 }
 
 class AppUrl {
+  AppUrl._();
+
   static Uri linkedinUri = Uri(
     scheme: "https",
     host: "www.linkedin.com",
@@ -48,6 +50,8 @@ class _CustomColorMode {
 }
 
 class AppSkills {
+  AppSkills._();
+
   static final highKnowledge = _CustomColorMode(
     light: Color(0xffDCF5DC),
     dark: Colors.black,
@@ -169,6 +173,8 @@ class Experience {
 }
 
 class AppExperiences {
+  AppExperiences._();
+
   static final experiences = [
     Experience(
       title: "DAW",
