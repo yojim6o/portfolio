@@ -18,6 +18,7 @@ class ExperienceItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> descriptions = experience.descriptionItems(context);
     return Material(
       elevation: 10,
       child: Container(
@@ -74,8 +75,11 @@ class ExperienceItem extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  for (final desc in experience.descriptionItems(context))
-                    _ExperienceDescriptionItem(text: desc),
+                  for (int i = 0; i < descriptions.length; i++)
+                    _ExperienceDescriptionItem(
+                      text: descriptions.elementAt(i),
+                      index: i,
+                    ),
                 ],
               ),
             ),
@@ -87,14 +91,15 @@ class ExperienceItem extends StatelessWidget {
 }
 
 class _ExperienceDescriptionItem extends StatelessWidget {
-  _ExperienceDescriptionItem({required this.text});
+  _ExperienceDescriptionItem({required this.text, required this.index});
 
   final String text;
+  final int index;
   final Random rnd = Random();
 
   @override
   Widget build(BuildContext context) {
-    final Color color = AppColors.miroList.elementAt(rnd.nextInt(4));
+    final Color color = AppColors.customColorsList.elementAt(index % 4);
 
     return Container(
       margin: EdgeInsets.only(bottom: 4),

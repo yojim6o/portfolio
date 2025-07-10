@@ -11,14 +11,13 @@ import 'l10n/app_localizations.dart';
 import 'shared/app_locale_controller.dart';
 
 Future<void> main() async {
-  //debugPaintSizeEnabled = true;
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
 
   runApp(
     ProviderScope(
       overrides: [sharedPreferencesProvider.overrideWithValue(prefs)],
-      child: ProviderScope(child: const MainApp()),
+      child: const MainApp(),
     ),
   );
 }
@@ -38,15 +37,11 @@ class MainApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       locale: Locale(locale.value ?? 'en'),
-      theme: AppTheme(/*fontFamily: fontFamily(locale.value)*/).light,
-      darkTheme: AppTheme(/*fontFamily: fontFamily(locale.value)*/).dark,
+      theme: AppTheme().light,
+      darkTheme: AppTheme().dark,
       themeMode: theme.value,
       supportedLocales: const [Locale('en'), Locale('es')],
       home: const Scaffold(body: HomePage()),
     );
-  }
-
-  String fontFamily(String? locale) {
-    return (locale ?? 'en') == 'en' ? 'Poppins' : 'Dosis';
   }
 }

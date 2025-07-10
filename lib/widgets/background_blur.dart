@@ -44,7 +44,7 @@ class _RandomPositioned extends StatelessWidget {
     final List<Widget> output = [];
     for (var i = 0; i < 10; i++) {
       final shape = Shape.line;
-      final color = AppColors.miroList.elementAt(rnd.nextInt(5));
+      final color = AppColors.customColorsList.elementAt(rnd.nextInt(5));
 
       switch (shape) {
         case Shape.triangle:

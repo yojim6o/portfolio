@@ -30,7 +30,7 @@ class AppColors {
   static const Color pietGreen = Color(0xFF31B672);
   static const Color miroBeige = Color(0xFFF5F5DC);
 
-  static const List<Color> miroList = [
+  static const List<Color> customColorsList = [
     pietRed,
     pietBlue,
     pietYellow,

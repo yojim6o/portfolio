@@ -6,7 +6,7 @@
   "about": "About me",
   "g1": "Gabriel Enguídanos",
   "g2": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' - Linus Torvalds.",
-  "g3": "Hi there! Welcome to my portfolio and... yes, you guessed it! It's inspired by the art of Piet Mondrian. I studied the Higher Diploma in Web Application Development at IES La Vereda (Valencia) with good grades, working with technologies such as Java, React, Laravel, Android Mobile, Bootstrap and SQL. This allowed me to build a solid foundation on which to keep expanding my knowledge and technical curiosity. When programming, I always try to apply the DRY principle and aim for high levels of abstraction.",
+  "g3": "Hi there! Welcome to my portfolio and... yes, you guessed it! It's inspired by the art of Piet Mondrian. I studied the Higher Diploma in Web Application Development at IES La Vereda (Valencia) performing top grades. During my studies I also got familiar with technologies such as Java, React, Laravel, Android Mobile, Bootstrap and SQL. This allowed me to build a solid foundation on which to keep expanding my knowledge and technical curiosity. When programming, I always try to apply the DRY principle and aim for high levels of abstraction.",
   "poweredByFlutter": "Web 100% powered by Flutter",
   "scoreShareAppDescription": "Score Share is a web application that I presented for my bachelor's thesis. I worked with NextJS as a fullstack framework, Tailwind and ShadCn as style management and NeonTech and Supabase as backend storage. The app provides an interface for musicians to upload tabs, sheets and arrangements of a particular song. The song search is powered by Spotify API.",
   "weatherAppDescription": "This was my first personal project in Flutter. At the beggining I wasn't Flutter skilled, but the problems I faced made me become more fluent.\nIt is a minimalist design, that retrieves location automatically from phone and then fetcehs the data and transfomrs it. I made use of Bloc, Cubit, Trent, Repository, Freezed, custom theme and RxDart for stream management.",
@@ -25,6 +25,6 @@
   "springDescription": "I work fluently with Spring 3+, integrating Spring Security and Spring Data.",
   "flutterDescription": "I'm relatively new to Flutter but I am really enjoying my time with it. At the moment I've coded a weather app for Android and this portfolio is alse powered by Flutter.",
   "mongoCompassDescription": "Basic usage for building aggregations, creating indexes, modifying data or run scripts.",
-  "dawExperience": "Successfully completed;Academic diploma for academic excellence;Extensive technology stack",
+  "dawExperience": "Successfully completed;Diploma for Academic Excellence ;Extensive technology stack",
   "sopraExperience": "Internship leading to permanent contract;Completed key projects using Spring 3.0 and JAVA 17;Commendations from management for work on key projects"
 }

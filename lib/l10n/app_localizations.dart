@@ -140,7 +140,7 @@ abstract class AppLocalizations {
   /// No description provided for @g3.
   ///
   /// In en, this message translates to:
-  /// **'Hi there! Welcome to my portfolio and... yes, you guessed it! It\'s inspired by the art of Piet Mondrian. I studied the Higher Diploma in Web Application Development at IES La Vereda (Valencia) with good grades, working with technologies such as Java, React, Laravel, Android Mobile, Bootstrap and SQL. This allowed me to build a solid foundation on which to keep expanding my knowledge and technical curiosity. When programming, I always try to apply the DRY principle and aim for high levels of abstraction.'**
+  /// **'Hi there! Welcome to my portfolio and... yes, you guessed it! It\'s inspired by the art of Piet Mondrian. I studied the Higher Diploma in Web Application Development at IES La Vereda (Valencia) performing top grades. During my studies I also got familiar with technologies such as Java, React, Laravel, Android Mobile, Bootstrap and SQL. This allowed me to build a solid foundation on which to keep expanding my knowledge and technical curiosity. When programming, I always try to apply the DRY principle and aim for high levels of abstraction.'**
   String get g3;
 
   /// No description provided for @poweredByFlutter.

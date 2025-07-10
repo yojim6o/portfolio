@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/extensions.dart';
-import 'package:portfolio/style/app_colors.dart';
 import 'package:portfolio/widgets/appbar/seo_text.dart';
+
+import '../../style/app_colors.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({super.key, required this.title, this.onPressed});
@@ -17,7 +18,7 @@ class PrimaryButton extends StatelessWidget {
         title,
         style: TextStyle(
           fontWeight: FontWeight.w500,
-          color: AppColors.gray[100],
+          color: AppColors.pietWhite,
         ),
       ),
     );

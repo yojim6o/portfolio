@@ -23,10 +23,13 @@ class SkillItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       borderRadius: isMobile ? BorderRadius.circular(999) : null,
-      shadowColor: color,
+      //shadowColor: color,
       elevation: 2.5,
-      child: Padding(
+      child: Container(
         padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          border: Border(left: BorderSide(color: color)),
+        ),
         child: Column(
           children: [
             Row(
@@ -34,17 +37,17 @@ class SkillItem extends StatelessWidget {
                 SizedBox(
                   width: 40,
                   height: 40,
-                  child: SvgPicture.asset(iconPath, height: 24, width: 24),
+                  child: SvgPicture.asset(
+                    iconPath,
+                    height: 24,
+                    width: 24,
+                    color: color,
+                  ),
                 ),
                 if (!isMobile) Gap(16),
                 if (!isMobile)
                   Expanded(
-                    child: Text(
-                      title,
-                      style: context.textStyle.titleSmBold.copyWith(
-                        color: context.theme.colorScheme.onSurface,
-                      ),
-                    ),
+                    child: Text(title, style: context.textStyle.titleSmBold),
                   ),
               ],
             ),
@@ -53,7 +56,7 @@ class SkillItem extends StatelessWidget {
               Text(
                 description,
                 style: context.textStyle.bodyMdMedium.copyWith(
-                  color: context.theme.colorScheme.onSurface,
+                  color: context.theme.colorScheme.onSurface.withAlpha(200),
                 ),
               ),
           ],

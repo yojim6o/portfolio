@@ -12,13 +12,9 @@ class HeroText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 20,
-      /*options: RectDottedBorderOptions(
-        color: AppColors.pietBlack,
-        padding: EdgeInsets.all(0),
-      ),*/
       child: Container(
         padding: EdgeInsets.all(context.insets.padding),
-        color: context.theme.colorScheme.surfaceBright,
+        color: context.theme.colorScheme.surface,
         child: Column(
           crossAxisAlignment: context.isDesktopOrTable
               ? CrossAxisAlignment.start
