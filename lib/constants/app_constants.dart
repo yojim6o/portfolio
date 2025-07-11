@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/extensions.dart';
+import 'package:portfolio/features/experiences/model/experience.dart';
+import 'package:portfolio/features/projects/model/project.dart';
+import 'package:portfolio/features/skills/model/skill.dart';
 
 class AppIcon {
+  AppIcon._();
+
   static const String _icons = 'assets/icons';
 
   static String en = '$_icons/en.svg';
@@ -58,118 +63,111 @@ class AppSkills {
   );
   static final midKnowledge = _CustomColorMode(
     light: Color(0xffDCF5A1),
-    dark: Color.fromARGB(255, 10, 12, 14),
+    dark: Color.fromARGB(255, 10, 12, 21),
   );
   static final lowKnowledge = _CustomColorMode(
     light: Color(0xffDCDCF5),
-    dark: Color.fromARGB(255, 15, 17, 19),
+    dark: Color.fromARGB(255, 15, 17, 21),
   );
-  static Map<String, Map<String, dynamic>> skillCategories = {
-    "languages": {
-      "java": {
-        "icon": AppIcon.java,
-        "color": (bool isDark) =>
+  static Map<String, List<Skill>> skillCategories = {
+    "languages": [
+      Skill(
+        skillName: 'Java',
+        skillDescription: (c) => c.text.javaDescription,
+        iconPath: AppIcon.java,
+        color: (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (BuildContext c) => c.text.javaDescription,
-      },
-      "javascript": {
-        "icon": AppIcon.js,
-        "color": (bool isDark) =>
+      ),
+      Skill(
+        skillName: 'javascript',
+        skillDescription: (c) => c.text.jsDescription,
+        iconPath: AppIcon.js,
+        color: (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (BuildContext c) => c.text.jsDescription,
-      },
-      "sql": {
-        "icon": AppIcon.sql,
-        "color": (bool isDark) =>
-            isDark ? midKnowledge.dark : midKnowledge.light,
-        "description": (BuildContext c) => c.text.sqlDescription,
-      },
-      "mongo": {
-        "icon": AppIcon.mongo,
-        "color": (bool isDark) =>
-            isDark ? midKnowledge.dark : midKnowledge.light,
-        "description": (BuildContext c) => c.text.mongoDescription,
-      },
-      "go": {
-        "icon": AppIcon.go,
-        "color": (bool isDark) =>
-            isDark ? midKnowledge.dark : midKnowledge.light,
-        "description": (BuildContext c) => c.text.goDescription,
-      },
-      "rust": {
-        "icon": AppIcon.rust,
-        "color": (bool isDark) =>
-            isDark ? lowKnowledge.dark : lowKnowledge.light,
-        "description": (BuildContext c) => c.text.rustDescription,
-      },
-    },
-    "frameworks": {
-      "react": {
-        "icon": AppIcon.react,
-        "color": (bool isDark) =>
+      ),
+      Skill(
+        skillName: 'sql',
+        skillDescription: (c) => c.text.sqlDescription,
+        iconPath: AppIcon.sql,
+        color: (bool isDark) => isDark ? midKnowledge.dark : midKnowledge.light,
+      ),
+      Skill(
+        skillName: 'mongo',
+        skillDescription: (c) => c.text.mongoDescription,
+        iconPath: AppIcon.mongo,
+        color: (bool isDark) => isDark ? midKnowledge.dark : midKnowledge.light,
+      ),
+      Skill(
+        skillName: 'go',
+        skillDescription: (c) => c.text.goDescription,
+        iconPath: AppIcon.go,
+        color: (bool isDark) => isDark ? lowKnowledge.dark : lowKnowledge.light,
+      ),
+      Skill(
+        skillName: 'rust',
+        skillDescription: (c) => c.text.rustDescription,
+        iconPath: AppIcon.rust,
+        color: (bool isDark) => isDark ? lowKnowledge.dark : lowKnowledge.light,
+      ),
+    ],
+    "frameworks": [
+      Skill(
+        skillName: 'react',
+        skillDescription: (c) => c.text.reactDescription,
+        iconPath: AppIcon.react,
+        color: (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (BuildContext c) => c.text.reactDescription,
-      },
-      "spring": {
-        "icon": AppIcon.spring,
-        "color": (bool isDark) =>
-            isDark ? midKnowledge.dark : midKnowledge.light,
-        "description": (BuildContext c) => c.text.springDescription,
-      },
-      "flutter": {
-        "icon": AppIcon.flutter,
-        "color": (bool isDark) =>
-            isDark ? midKnowledge.dark : midKnowledge.light,
-        "description": (BuildContext c) => c.text.flutterDescription,
-      },
-    },
-    "tools&others": {
-      "vs code": {
-        "icon": AppIcon.vscode,
-        "color": (bool isDark) =>
+      ),
+      Skill(
+        skillName: 'spring',
+        skillDescription: (c) => c.text.springDescription,
+        iconPath: AppIcon.spring,
+        color: (bool isDark) => isDark ? midKnowledge.dark : midKnowledge.light,
+      ),
+      Skill(
+        skillName: 'flutter',
+        skillDescription: (c) => c.text.flutterDescription,
+        iconPath: AppIcon.flutter,
+        color: (bool isDark) => isDark ? midKnowledge.dark : midKnowledge.light,
+      ),
+    ],
+
+    "tools&others": [
+      Skill(
+        skillName: 'vs code',
+        skillDescription: (_) => '',
+        iconPath: AppIcon.vscode,
+        color: (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (_) => '',
-      },
-      "intellij": {
-        "icon": AppIcon.idea,
-        "color": (bool isDark) =>
+      ),
+      Skill(
+        skillName: 'intellij',
+        skillDescription: (_) => '',
+        iconPath: AppIcon.idea,
+        color: (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (_) => '',
-      },
-      "tailwind": {
-        "icon": AppIcon.tailwind,
-        "color": (bool isDark) =>
+      ),
+      Skill(
+        skillName: 'tailwind css',
+        skillDescription: (_) => '',
+        iconPath: AppIcon.tailwind,
+        color: (bool isDark) =>
             isDark ? highKnowledge.dark : highKnowledge.light,
-        "description": (_) => '',
-      },
-      "postman": {
-        "icon": AppIcon.postman,
-        "color": (bool isDark) =>
-            isDark ? midKnowledge.dark : midKnowledge.light,
-        "description": (_) => '',
-      },
-      "mongo compass": {
-        "icon": AppIcon.mongoCompass,
-        "color": (bool isDark) =>
-            isDark ? lowKnowledge.dark : lowKnowledge.light,
-        "description": (BuildContext c) => c.text.mongoCompassDescription,
-      },
-    },
+      ),
+      Skill(
+        skillName: 'postman',
+        skillDescription: (_) => '',
+        iconPath: AppIcon.postman,
+        color: (bool isDark) => isDark ? midKnowledge.dark : midKnowledge.light,
+      ),
+      Skill(
+        skillName: 'mongo compass',
+        skillDescription: (c) => c.text.mongoCompassDescription,
+        iconPath: AppIcon.mongoCompass,
+        color: (bool isDark) => isDark ? lowKnowledge.dark : lowKnowledge.light,
+      ),
+    ],
   };
-}
-
-class Experience {
-  final String title;
-  final DateTime start;
-  DateTime? end;
-  final List<String> Function(BuildContext context) descriptionItems;
-
-  Experience({
-    required this.title,
-    required this.start,
-    this.end,
-    required this.descriptionItems,
-  });
 }
 
 class AppExperiences {
@@ -188,20 +186,6 @@ class AppExperiences {
       descriptionItems: (context) => context.text.sopraExperience.split(";"),
     ),
   ];
-}
-
-class Project {
-  final String title;
-  final List<String> imagePaths;
-  final String Function(BuildContext) description;
-  final String url;
-
-  Project({
-    required this.title,
-    required this.url,
-    required this.imagePaths,
-    required this.description,
-  });
 }
 
 class AppProjects {

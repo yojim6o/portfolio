@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/extensions.dart';
+import 'package:portfolio/features/experiences/model/experience.dart';
 import 'package:portfolio/widgets/geometry/square.dart';
 
-import '../../../constants/app_constants.dart';
 import '../../../style/app_colors.dart';
 
 const double expWidth = 300;

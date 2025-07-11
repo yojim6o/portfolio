@@ -87,7 +87,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mongoCompassDescription => 'Basic usage for building aggregations, creating indexes, modifying data or run scripts.';
 
   @override
-  String get dawExperience => 'Successfully completed;Academic diploma for academic excellence;Extensive technology stack';
+  String get dawExperience => 'Successfully completed;Diploma for Academic Excellence ;Extensive technology stack';
 
   @override
   String get sopraExperience => 'Internship leading to permanent contract;Completed key projects using Spring 3.0 and JAVA 17;Commendations from management for work on key projects';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
@@ -35,7 +34,6 @@ class SkillList extends StatelessWidget {
 class _DesktopSkillsContainer extends StatelessWidget {
   _DesktopSkillsContainer();
 
-  final colors = [AppColors.pietYellow, AppColors.pietGreen, AppColors.pietRed];
   final skills = AppSkills.skillCategories.entries.toList();
 
   @override
@@ -43,26 +41,76 @@ class _DesktopSkillsContainer extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        for (int i = 0; i < 3; i++) ...[
+        for (int i = 0; i < skills.length; i++) ...[
           Expanded(
-            child: _SkillColumnDesktop(
-              textChild: _CustomTextSpan(
-                color: colors.elementAt(i),
-                title: skills.elementAt(i).key,
-              ),
-              contentChild: skills.elementAt(i).value.entries.map<Widget>((e) {
-                return SkillItem(
-                  iconPath: e.value['icon'],
-                  title: e.key.toUpperCase(),
-                  description: e.value['description'](context),
-                  color: colors.elementAt(i),
-                );
-              }).toList(),
+            child: Column(
+              children: [
+                _CustomTextSpan(
+                  color: AppColors.trioColors.elementAt(i),
+                  title: skills.elementAt(i).key,
+                ),
+                const Gap(16),
+                Column(
+                  spacing: 8,
+                  children: skills.elementAt(i).value.map<Widget>((s) {
+                    return SkillItem(
+                      skill: s,
+                      color: AppColors.trioColors.elementAt(i),
+                    );
+                  }).toList(),
+                ),
+              ],
             ),
           ),
           const Gap(8),
         ],
       ],
+    );
+  }
+}
+
+class _MobileSkillsContainer extends StatelessWidget {
+  _MobileSkillsContainer();
+
+  final skills = AppSkills.skillCategories.entries.toList();
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        margin: EdgeInsets.only(bottom: 16),
+        child: Column(
+          children: [
+            for (int i = 0; i < skills.length; i++) ...[
+              Column(
+                children: [
+                  _CustomTextSpan(
+                    color: AppColors.trioColors.elementAt(i),
+                    title: skills.elementAt(i).key,
+                  ),
+                  Gap(8),
+                  Wrap(
+                    direction: Axis.horizontal,
+                    spacing: 8,
+                    runSpacing: 8,
+                    alignment: WrapAlignment.start,
+                    children: [
+                      ...skills.elementAt(i).value.map<Widget>((s) {
+                        return SkillItem(
+                          isMobile: true,
+                          skill: s,
+                          color: AppColors.trioColors.elementAt(i),
+                        );
+                      }),
+                    ],
+                  ),
+                ],
+              ),
+              const Gap(32),
+            ],
+          ],
+        ),
+      ),
     );
   }
 }
@@ -102,123 +150,5 @@ class _CustomTextSpan extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class _SkillColumnDesktop extends StatelessWidget {
-  const _SkillColumnDesktop({
-    required this.textChild,
-    required this.contentChild,
-  });
-
-  final Widget textChild;
-  final List<Widget> contentChild;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        textChild,
-        const Gap(16),
-        Column(spacing: 8, children: contentChild),
-      ],
-    );
-  }
-}
-
-class _MobileSkillsContainer extends StatelessWidget {
-  _MobileSkillsContainer();
-
-  final colors = [AppColors.pietYellow, AppColors.pietGreen, AppColors.pietRed];
-  final skills = AppSkills.skillCategories.entries.toList();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        margin: EdgeInsets.only(bottom: 16),
-        child: Column(
-          children: [
-            for (int i = 0; i < skills.length; i++) ...[
-              Column(
-                children: [
-                  _CustomTextSpan(
-                    color: colors.elementAt(i),
-                    title: skills.elementAt(i).key,
-                  ),
-                  Gap(8),
-                  Wrap(
-                    direction: Axis.horizontal,
-                    spacing: 8,
-                    runSpacing: 8,
-                    alignment: WrapAlignment.start,
-                    children: [
-                      ...skills.elementAt(i).value.entries.map<Widget>((e) {
-                        return FractionallySizedBox(
-                          widthFactor: 0.25,
-                          child: AspectRatio(
-                            aspectRatio: 1,
-                            child: Container(
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadiusGeometry.circular(
-                                  999,
-                                ),
-                                border: Border.fromBorderSide(
-                                  BorderSide(
-                                    color: colors.elementAt(i),
-                                    width: 0.5,
-                                  ),
-                                ),
-                                gradient: LinearGradient(
-                                  stops: [0.09, 0.109, 0.11, 1],
-                                  colors: [
-                                    colors.elementAt(i),
-                                    colors.elementAt(i),
-                                    AppColors.pietWhite,
-                                    AppColors.pietWhite,
-                                  ],
-                                ),
-                              ),
-                              child: Center(
-                                child: SvgPicture.asset(
-                                  e.value['icon'],
-                                  height: 64,
-                                  width: 64,
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                    ],
-                  ),
-                ],
-              ),
-              const Gap(32),
-            ],
-          ],
-        ),
-      ),
-    );
-
-    /*const itemCount = 10;
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, index) {
-          if (index.isEven) {
-            return SkillItem(
-              title: 'Java',
-              description: "",
-              iconPath: AppIcon.java,
-              color: Colors.greenAccent,
-            );
-          } else {
-            return const Gap(16); // separator
-          }
-        },
-        childCount: itemCount * 2 - 1, // 9 gaps between 10 items
-      ),
-    );*/
   }
 }

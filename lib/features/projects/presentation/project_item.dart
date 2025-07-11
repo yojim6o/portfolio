@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
+import 'package:portfolio/features/projects/model/project.dart';
+import 'package:portfolio/style/app_gradients.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/appbar/seo_text.dart';
 
-import '../../../style/app_colors.dart';
 import '../../../widgets/appbar/styled_buttons.dart';
 
 class ProjectItem extends StatelessWidget {
@@ -18,42 +18,7 @@ class ProjectItem extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: context.theme.colorScheme.surfaceBright.withAlpha(15),
-        gradient: RadialGradient(
-          tileMode: TileMode.clamp,
-          stops: [
-            0.0,
-            0.259,
-            0.26,
-            0.269,
-            0.27,
-            0.409,
-            0.41,
-            0.419,
-            0.42,
-            0.759,
-            0.76,
-            0.769,
-            0.77,
-          ],
-          colors: [
-            AppColors.pietYellow,
-            AppColors.pietYellow,
-            Colors.black,
-            Colors.black,
-            AppColors.pietGreen,
-            AppColors.pietGreen,
-            Colors.black,
-            Colors.black,
-            AppColors.pietBlue,
-            AppColors.pietBlue,
-            Colors.black,
-            Colors.black,
-            AppColors.pietRed,
-          ],
-          radius: 2,
-          center: Alignment.center,
-          focal: Alignment.centerLeft,
-        ),
+        gradient: AppGradients.cardGradient(radius: 2),
       ),
       child: Padding(
         padding: EdgeInsets.all(16),

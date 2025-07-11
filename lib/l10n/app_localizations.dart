@@ -254,7 +254,7 @@ abstract class AppLocalizations {
   /// No description provided for @dawExperience.
   ///
   /// In en, this message translates to:
-  /// **'Successfully completed;Academic diploma for academic excellence;Extensive technology stack'**
+  /// **'Successfully completed;Diploma for Academic Excellence ;Extensive technology stack'**
   String get dawExperience;
 
   /// No description provided for @sopraExperience.

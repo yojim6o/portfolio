@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/app_menu_list.dart';
 import 'package:portfolio/extensions.dart';
-import 'package:portfolio/style/app_colors.dart';
+import 'package:portfolio/style/app_gradients.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/style/app_text_styles.dart';
 import 'package:portfolio/widgets/appbar/app_bar_wrapper_icon.dart';
@@ -18,41 +18,8 @@ class MyAppBar extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            gradient: RadialGradient(
-              tileMode: TileMode.clamp,
-              stops: [
-                0.0,
-                0.259,
-                0.26,
-                0.269,
-                0.27,
-                0.409,
-                0.41,
-                0.419,
-                0.42,
-                0.739,
-                0.74,
-                0.749,
-                0.75,
-              ],
-              colors: [
-                AppColors.pietYellow,
-                AppColors.pietYellow,
-                Colors.black,
-                Colors.black,
-                AppColors.pietGreen,
-                AppColors.pietGreen,
-                Colors.black,
-                Colors.black,
-                AppColors.pietBlue,
-                AppColors.pietBlue,
-                Colors.black,
-                Colors.black,
-                AppColors.pietRed,
-              ],
+            gradient: AppGradients.appBarGradient(
               radius: (context.mq.size.width * 0.008267) + 1,
-              center: Alignment.center,
-              focal: Alignment.bottomLeft,
             ),
             border: Border(
               bottom: BorderSide(
@@ -64,7 +31,6 @@ class MyAppBar extends StatelessWidget {
           child: AnimatedContainer(
             alignment: Alignment.center,
             duration: const Duration(milliseconds: 200),
-            color: context.theme.appBarTheme.backgroundColor,
             padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
             height: context.insets.appBarHeight,
             child: ConstrainedBox(
