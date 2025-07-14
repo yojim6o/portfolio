@@ -18,6 +18,7 @@ class _HeroImageState extends State<HeroImage> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    super.initState();
     controller = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: 1200),
@@ -49,7 +50,6 @@ class _HeroImageState extends State<HeroImage> with TickerProviderStateMixin {
         curve: Interval(0.60, 1, curve: Curves.easeInOutCirc),
       ),
     );
-    super.initState();
     Future.delayed(Duration(milliseconds: 500), () => controller.forward());
   }
 
@@ -100,5 +100,11 @@ class _HeroImageState extends State<HeroImage> with TickerProviderStateMixin {
         ),
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }

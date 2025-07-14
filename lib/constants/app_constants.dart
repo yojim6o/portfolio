@@ -4,6 +4,12 @@ import 'package:portfolio/features/experiences/model/experience.dart';
 import 'package:portfolio/features/projects/model/project.dart';
 import 'package:portfolio/features/skills/model/skill.dart';
 
+class Keys {
+  Keys._();
+
+  static final homeKey = GlobalKey();
+}
+
 class AppIcon {
   AppIcon._();
 

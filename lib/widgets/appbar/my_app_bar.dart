@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/constants/app_menu_list.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/style/app_gradients.dart';
 import 'package:portfolio/style/app_size.dart';
 import 'package:portfolio/style/app_text_styles.dart';
+import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/widgets/appbar/app_bar_wrapper_icon.dart';
 import 'package:portfolio/widgets/appbar/drawer_menu.dart';
 import 'package:portfolio/widgets/appbar/language_switch.dart';
@@ -82,7 +84,7 @@ class MenuList extends StatelessWidget {
           (e) => LargeAppBarMenuItem(
             text: e.title,
             isSelected: true,
-            onTap: () {},
+            onTap: () => Utils.scrollToSection(Keys.homeKey),
           ),
         )
         .toList();

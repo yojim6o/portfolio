@@ -20,8 +20,8 @@ class AppGradients {
           0.42,
           0.739,
           0.74,
-          0.749,
-          0.75,
+          0.745,
+          0.746,
         ],
         colors: [
           AppColors.pietYellow,
@@ -41,7 +41,6 @@ class AppGradients {
         radius: radius,
         center: Alignment.center,
         focal: Alignment.bottomLeft,
-        focalRadius: 0.5,
       );
 
   static RadialGradient cardGradient({required double radius}) =>

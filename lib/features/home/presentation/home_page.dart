@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio/constants/app_constants.dart';
 import 'package:portfolio/extensions.dart';
 import 'package:portfolio/features/experiences/presentation/experience_body.dart';
 import 'package:portfolio/features/home/presentation/hero_widget.dart';
@@ -32,25 +33,14 @@ class HomePage extends StatelessWidget {
                     constraints: BoxConstraints(maxWidth: Insets.maxWidth),
                     child: CustomScrollView(
                       slivers: [
-                        SliverToBoxAdapter(child: HeroWidget()),
+                        SliverToBoxAdapter(
+                          child: HeroWidget(key: Keys.homeKey),
+                        ),
                         SliverGap(context.insets.gap),
                         SliverToBoxAdapter(child: const HomeProjectList()),
                         SliverGap(context.insets.gap),
                         SliverToBoxAdapter(child: const ExperienceBody()),
                         SliverGap(context.insets.gap),
-                        /* SliverToBoxAdapter(
-                          child: HomeTitleSubtitle(
-                            title: context.text.skills,
-                            subtitle: context.text.skillsDescription,
-                          ),
-                        ),
-                        const SliverGap(32),
-                        SliverPadding(
-                          sliver: SkillList(),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: context.insets.padding,
-                          ),
-                        ),*/
                         SliverToBoxAdapter(child: SkillList()),
                         SliverToBoxAdapter(child: MyFooter()),
                       ],
@@ -60,7 +50,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            const MyAppBar(),
+            MyAppBar(),
           ],
         );
       },
